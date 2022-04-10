@@ -10,7 +10,12 @@ local function map()
 		{"nmap","<silent> <leader>2","<cmd>DlvDebug<cr>"},
 		{"nmap","<silent> <leader>3","<cmd>DlvTest<cr>"},
 		{"nmap","<silent> <leader>t","<cmd>TestNearest-v<cr>"},
-		{"nmap","<silent> <leader>e","<cmd>b#<cr>"}
+		{"nmap","<silent> <leader>e","<cmd>b#<cr>"},
+		{"nmap","<silent> gsf","<cmd>GoFillStruct<cr>"},
+		{"nmap","<silent> gf","<cmd>GoFmt<cr>"},
+		{"nmap","<silent> gft","<cmd>GoUnit<cr>"},
+		{"nmap","<silent> <leader>hd","<cmd>lua vim.lsp.buf.hover()<cr>"},
+		{"nmap","<silent> <leader>hs","<cmd>lua vim.lsp.buf.signature_help()<cr>"}
 	}
 
 	for i,item in ipairs(maps) do

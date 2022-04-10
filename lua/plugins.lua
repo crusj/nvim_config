@@ -36,5 +36,7 @@ return require('packer').startup(function()
 	use 'rakr/vim-one'
 	use 'overcache/NeoSolarized'
 	use 'hoschi/yode-nvim'
+	use 'AndrewRadev/splitjoin.vim'
+	use 'hexdigest/gounit-vim'
 end)
 
