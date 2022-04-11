@@ -17,6 +17,7 @@ return require('packer').startup(function()
 	use {'akinsho/bufferline.nvim', tag = "*", requires = 'kyazdani42/nvim-web-devicons'}
   	use 'nvim-lualine/lualine.nvim'
 	use 'nvim-lua/plenary.nvim'
+	use 'j-hui/fidget.nvim'
 
 	-- complete
   	use 'neovim/nvim-lspconfig'
@@ -26,12 +27,13 @@ return require('packer').startup(function()
   	use 'hrsh7th/cmp-buffer'
   	use 'hrsh7th/cmp-path'
   	use 'hrsh7th/cmp-cmdline'
+	use 'f3fora/cmp-spell'
 	use 'saadparwaiz1/cmp_luasnip'
 	use 'L3MON4D3/LuaSnip'
-	use 'ray-x/lsp_signature.nvim'
 	use 'onsails/lspkind-nvim'
 	use "rafamadriz/friendly-snippets"
 	use 'simrat39/symbols-outline.nvim'
+	use 'mfussenegger/nvim-lint'
 
 	-- search
 	use 'nvim-telescope/telescope.nvim'
@@ -57,7 +59,6 @@ return require('packer').startup(function()
 		require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
 	  end
 	}
-	use {'edluffy/specs.nvim'}
 
 	-- test and debug
 	use 'vim-test/vim-test'

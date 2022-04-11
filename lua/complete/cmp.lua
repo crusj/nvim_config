@@ -21,17 +21,27 @@ local function regCmp()
 		  ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 		},
 		sources = cmp.config.sources({
-		  {name = 'nvim_lua'},
-		  { name = 'nvim_lsp' },
-		  { name = 'luasnip' }, -- For luasnip users.
-		}, {
-		  { name = 'buffer' },
-		}),
+		  {
+			  name = 'nvim_lua'
+		  },
+		  {
+			  name = 'nvim_lsp',
+		  },
+		  {
+			  name = 'luasnip' 
+		  }, -- For luasnip users.
+		  {
+			  name = 'buffer'
+		  },
+		  {
+			  name = 'spell'
+		  }
+		}), 
 		formatting = {
 			format = lspkind.cmp_format({
 				mode = 'symbol_text', -- show only symbol annotations
 				maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-		})
+			})
 		}
   })
 end
