@@ -1,7 +1,7 @@
 require('bufferline').setup {
   options = {
     mode = "buffers", -- set to "tabs" to only show tabpages instead
-    numbers = "ordinal",
+    numbers = "both",
     --- @deprecated, please specify numbers as a function to customize the styling
     close_command = "bdelete! %d",       -- can be a string | function, see "Mouse actions"
     right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
@@ -69,8 +69,8 @@ function CloseBuffer()
 end
 
 vim.cmd([[nnoremap <silent> \x <cmd> lua CloseBuffer()<cr>]])
-vim.cmd([[nnoremap <silent><tab> <cmd>BufferLineCycleNext<CR>]])
-vim.cmd([[nnoremap <silent><space><tab> :BufferLineCyclePrev<CR>]])
+vim.cmd([[nnoremap <silent><space>k <cmd>BufferLineCycleNext<CR>]])
+vim.cmd([[nnoremap <silent><space>j :BufferLineCyclePrev<CR>]])
 vim.cmd([[nnoremap <silent>be :BufferLineSortByExtension<CR>]])
 vim.cmd([[nnoremap <silent>bd :BufferLineSortByDirectory<CR>]])
 vim.cmd([[nnoremap <silent><space>1 <Cmd>BufferLineGoToBuffer 1<CR>]])

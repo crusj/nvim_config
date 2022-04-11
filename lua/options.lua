@@ -16,6 +16,7 @@ local function load_options()
 		-- foldmethod = "indent",
 		signcolumn = "yes",
 		shell = "/bin/bash",
+		guifont='Hack Nerd Font:h16',
 	}
 
 	for option,value in pairs(global_options) do

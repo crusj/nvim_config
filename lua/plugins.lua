@@ -6,37 +6,57 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function()
   -- Packer can manage itself
   	use 'wbthomason/packer.nvim'
+
+	-- icon
+	use 'kyazdani42/nvim-web-devicons'
+
+	-- status
+	use 'glepnir/dashboard-nvim'
+	use 'Shatur/neovim-session-manager'
+	use 'kyazdani42/nvim-tree.lua'
+	use {'akinsho/bufferline.nvim', tag = "*", requires = 'kyazdani42/nvim-web-devicons'}
+  	use 'nvim-lualine/lualine.nvim'
+	use 'nvim-lua/plenary.nvim'
+
+	-- complete
   	use 'neovim/nvim-lspconfig'
+	use 'hrsh7th/nvim-cmp'
   	use 'hrsh7th/cmp-nvim-lsp'
+	use 'hrsh7th/cmp-nvim-lua'
   	use 'hrsh7th/cmp-buffer'
   	use 'hrsh7th/cmp-path'
   	use 'hrsh7th/cmp-cmdline'
-	use 'hrsh7th/nvim-cmp'
-	use 'L3MON4D3/LuaSnip'
 	use 'saadparwaiz1/cmp_luasnip'
+	use 'L3MON4D3/LuaSnip'
 	use 'ray-x/lsp_signature.nvim'
-	use 'nvim-treesitter/nvim-treesitter'
 	use 'onsails/lspkind-nvim'
-	use 'kyazdani42/nvim-tree.lua'
-	use 'kyazdani42/nvim-web-devicons'
-	use {'akinsho/bufferline.nvim', tag = "*", requires = 'kyazdani42/nvim-web-devicons'}
-	use 'nvim-lua/plenary.nvim'
+	use "rafamadriz/friendly-snippets"
+	use 'simrat39/symbols-outline.nvim'
+
+	-- search
 	use 'nvim-telescope/telescope.nvim'
 	use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 	use {'nvim-telescope/telescope-ui-select.nvim' }
-	use 'Shatur/neovim-session-manager'
+	use 'nvim-treesitter/nvim-treesitter'
+
+	-- tools
+	use 'hoschi/yode-nvim'
 	use 'voldikss/vim-floaterm'
-	use 'glepnir/dashboard-nvim'
+	use 'itchyny/vim-cursorword'
+	use 'windwp/nvim-autopairs'
+	use 'AndrewRadev/splitjoin.vim'
+
+	-- test and debug
 	use 'vim-test/vim-test'
 	use 'sebdah/vim-delve'
-	use "rafamadriz/friendly-snippets"
-	use 'windwp/nvim-autopairs'
-  	use 'nvim-lualine/lualine.nvim'
-	use 'simrat39/symbols-outline.nvim'
+	use 'buoto/gotests-vim'
+
+	-- colorscheme
 	use 'rakr/vim-one'
 	use 'overcache/NeoSolarized'
-	use 'hoschi/yode-nvim'
-	use 'AndrewRadev/splitjoin.vim'
-	use 'hexdigest/gounit-vim'
+
+
+	-- git 
+	use 'sindrets/diffview.nvim'
 end)
 
