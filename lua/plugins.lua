@@ -38,6 +38,8 @@ return require('packer').startup(function()
 	use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 	use {'nvim-telescope/telescope-ui-select.nvim' }
 	use 'nvim-treesitter/nvim-treesitter'
+	use { "tami5/sqlite.lua" }
+	use 'nvim-telescope/telescope-frecency.nvim'
 
 	-- tools
 	use 'hoschi/yode-nvim'
@@ -45,6 +47,17 @@ return require('packer').startup(function()
 	use 'itchyny/vim-cursorword'
 	use 'windwp/nvim-autopairs'
 	use 'AndrewRadev/splitjoin.vim'
+	use 'tpope/vim-surround'
+	use 'terrortylor/nvim-comment'
+	use {
+	  'phaazon/hop.nvim',
+	  branch = 'v1', -- optional but strongly recommended
+	  config = function()
+		-- you can configure Hop the way you like here; see :h hop-config
+		require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+	  end
+	}
+	use {'edluffy/specs.nvim'}
 
 	-- test and debug
 	use 'vim-test/vim-test'
@@ -54,7 +67,8 @@ return require('packer').startup(function()
 	-- colorscheme
 	use 'rakr/vim-one'
 	use 'overcache/NeoSolarized'
-
+	use 'rebelot/kanagawa.nvim'
+	use 'p00f/nvim-ts-rainbow'
 
 	-- git 
 	use 'sindrets/diffview.nvim'

@@ -19,6 +19,27 @@ local function map()
 		{"nmap","<silent> <leader>do","<cmd>DiffviewOpen<cr>"},
 		{"nmap","<silent> <leader>dc","<cmd>DiffviewClose<cr>"},
 		{"nmap","<silent> <leader>dh","<cmd>DiffviewFileHistory<cr>"},
+		{"nmap","<silent> <leader>fl","<cmd>Telescope frecency<cr>"},
+
+		-- move
+
+		{"nmap","<silent> <tab>ww","<cmd>HopWord<cr>"},
+		{"nmap","<silent> <tab>wl","<cmd>HopWordCurrentLine<cr>"},
+		{"nmap","<silent> <tab>wa","<cmd>HopWordAC<cr>"},
+		{"nmap","<silent> <tab>wb","<cmd>HopWordBC<cr>"},
+
+		{"nmap","<silent> <tab>ll","<cmd>HopLine<cr>"},
+		{"nmap","<silent> <tab>lb","<cmd>HopLineBC<cr>"},
+		{"nmap","<silent> <tab>la","<cmd>HopLineAC<cr>"},
+		{"nmap","<silent> <tab>lm","<cmd>HopLineMW<cr>"},
+
+		{"nmap","<silent> <tab>1l","<cmd>HopChar1CurrentLine<cr>"},
+		{"nmap","<silent> <tab>2l","<cmd>HopChar2CurrentLine<cr>"},
+		{"nmap","<silent> <tab>11","<cmd>HopChar1<cr>"},
+		{"nmap","<silent> <tab>1a","<cmd>HopChar1AC<cr>"},
+
+		{"nmap","<silent> <tab>22","<cmd>HopChar2<cr>"},
+		{"nmap","<silent> <tab>2b","<cmd>HopChar2BC<cr>"},
 	}
 
 	for i,item in ipairs(maps) do

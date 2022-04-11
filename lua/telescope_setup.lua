@@ -39,6 +39,10 @@ require('telescope').setup{
 	["ui-select"] = {
 		 require("telescope.themes").get_dropdown {
       	 }
+	},
+	frecency = {
+      show_scores = true,
+	  default_workspace = 'CWD'
 	}
 
   }
@@ -46,6 +50,7 @@ require('telescope').setup{
 
 require('telescope').load_extension('fzf')
 require("telescope").load_extension("ui-select")
+require("telescope").load_extension("frecency")
 
 vim.cmd([[
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
