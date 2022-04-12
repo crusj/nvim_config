@@ -4,9 +4,9 @@ local function regCmp()
 	require('cmp').setup({
 		snippet = {
 		  -- REQUIRED - you must specify a snippet engine
-		  expand = function(args)
-		  require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-		  end,
+		  	expand = function(args)
+		  		require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+		  	end,
 		},
 		mapping = {
 		  ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
@@ -28,8 +28,9 @@ local function regCmp()
 			  name = 'nvim_lsp',
 		  },
 		  {
-			  name = 'luasnip' 
-		  }, -- For luasnip users.
+			  name = 'luasnip' ,
+			  priority = 100,
+		  }, 
 		  {
 			  name = 'buffer'
 		  },
@@ -42,7 +43,8 @@ local function regCmp()
 				mode = 'symbol_text', -- show only symbol annotations
 				maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
 			})
-		}
+		},
+		preselect = cmp.PreselectMode.None,
   })
 end
 regCmp()

@@ -8,7 +8,12 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 -- golang
 lspconfig['gopls'].setup {
    	capabilities = capabilities,
-	on_attach = custom_attach
+	on_attach = custom_attach,
+	settings = {
+		gopls = {
+			gofumpt = true
+		}
+	}
 }
 
 -- lua

@@ -39,7 +39,12 @@ return require('packer').startup(function()
 	use 'nvim-telescope/telescope.nvim'
 	use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 	use {'nvim-telescope/telescope-ui-select.nvim' }
-	use 'nvim-treesitter/nvim-treesitter'
+	use {'kevinhwang91/nvim-bqf'}
+	use {'nvim-treesitter/nvim-treesitter',run = ':TSUpdate'}
+	use {'junegunn/fzf', run = function()
+    	vim.fn['fzf#install']()
+		end
+	}
 	use { "tami5/sqlite.lua" }
 	use 'nvim-telescope/telescope-frecency.nvim'
 

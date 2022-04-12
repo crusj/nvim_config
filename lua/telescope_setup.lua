@@ -54,34 +54,16 @@ require("telescope").load_extension("frecency")
 
 vim.cmd([[
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-]])
-vim.cmd([[
 nnoremap <leader>fs <cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>
-]])
-vim.cmd([[
 nnoremap <leader>fd <cmd>lua require('telescope.builtin').lsp_definitions()<cr>
-]])
-vim.cmd([[
 nnoremap <leader>fp <cmd>lua require('telescope.builtin').treesitter()<cr>
-]])
-vim.cmd([[
 nnoremap <leader>ft <cmd>lua require('telescope.builtin').tags()<cr>
-]])
-vim.cmd([[
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
-]])
-vim.cmd([[
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
-]])
-vim.cmd([[
 nnoremap <leader>fR <cmd>lua vim.lsp.buf.formatting()<cr>
-]])
-vim.cmd([[
 nnoremap <leader>fi <cmd>lua require('telescope.builtin').lsp_implementations()<cr>
-]])
-vim.cmd([[
 nnoremap <leader>fr <cmd>lua require('telescope.builtin').lsp_references()<cr>
-]])
-vim.cmd([[
 nnoremap <leader>fa <cmd>lua require('telescope.builtin').lsp_code_actions()<cr>
+nnoremap <leader>fm <cmd>lua require('telescope.builtin').marks()<cr>
+nnoremap <leader>fq <cmd>lua require('telescope.builtin').quickfix()<cr>
 ]])
