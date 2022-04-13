@@ -12,7 +12,7 @@ local function regExtensions()
 		},
 		{
 			{ name = 'cmdline' }
-	})
+		})
 })
 end
 

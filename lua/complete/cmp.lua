@@ -3,7 +3,6 @@ local function regCmp()
 	local cmp = require('cmp')
 	require('cmp').setup({
 		snippet = {
-		  -- REQUIRED - you must specify a snippet engine
 		  	expand = function(args)
 		  		require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
 		  	end,
@@ -17,8 +16,8 @@ local function regCmp()
 			i = cmp.mapping.abort(),
 			c = cmp.mapping.close(),
 		  }),
-		  ['<Tab>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-		  ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+		  ['<Tab>'] = cmp.mapping.confirm({ select = true }),
+		  ['<CR>'] = cmp.mapping.confirm({ select = true })
 		},
 		sources = cmp.config.sources({
 		  {
@@ -30,6 +29,7 @@ local function regCmp()
 		  {
 			  name = 'luasnip' ,
 			  priority = 100,
+
 		  }, 
 		  {
 			  name = 'buffer'

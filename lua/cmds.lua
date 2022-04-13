@@ -1,5 +1,7 @@
 -- editor
- vim.cmd([[set nohlsearch]])
+vim.cmd([[
+set nohlsearch
+]])
 
 -- neovide
 vim.cmd([[let g:neovide_cursor_vfx_mode = "pixiedust"]])
