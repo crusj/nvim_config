@@ -1,3 +1,6 @@
+require('impatient')
+require'impatient'.enable_profile()
+
 require('cmds')
 require('plugins')
 require('options') 

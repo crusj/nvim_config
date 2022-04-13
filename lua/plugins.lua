@@ -66,6 +66,7 @@ return require('packer').startup(function()
 	}
 	use 'skywind3000/asyncrun.vim'
 	use 'NTBBloodbath/rest.nvim'
+	use 'lewis6991/impatient.nvim'
 
 	-- test and debug
 	use 'vim-test/vim-test'
@@ -82,6 +83,7 @@ return require('packer').startup(function()
 
 	-- git 
 	use 'sindrets/diffview.nvim'
+
 
 end)
 
