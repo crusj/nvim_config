@@ -16,6 +16,7 @@ local function map()
 		{"nmap","<silent> gt","<cmd>GoTests<cr>"},
 		{"nmap","<silent> <space>fd","<cmd>lua vim.lsp.buf.hover()<CR>"},
 		{"nmap","<silent> <space>fs","<cmd>lua vim.lsp.buf.signature_help()<CR>"},
+		{"nmap","<silent> gr","<cmd>lua vim.lsp.buf.rename()<cr>"},
 		{"nmap","<silent> <leader>do","<cmd>DiffviewOpen<cr>"},
 		{"nmap","<silent> <leader>dc","<cmd>DiffviewClose<cr>"},
 		{"nmap","<silent> <leader>dh","<cmd>DiffviewFileHistory<cr>"},
