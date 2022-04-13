@@ -1,1 +1,3 @@
-vim.cmd([[colorscheme NeoSolarized]])
+vim.cmd([[colorscheme tokyonight]])
+vim.cmd([[let g:tokyonight_style = "day"]])
+

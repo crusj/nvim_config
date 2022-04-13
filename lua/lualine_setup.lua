@@ -1,9 +1,17 @@
-require('lualine').setup({
+local lualine = require("lualine")
+lualine.setup({
 	options = {
-		theme = 'solarized_light',
+		theme = 'tokyonight',
 		disabled_filetypes = {'Outline','NvimTree','dashboard'},
 	},
 	sections = {
+		lualine_a = {
+			{
+				'mode',
+				padding = 1 
+
+			}
+		},
 		lualine_c = {
 			{
 				'filename',
@@ -14,4 +22,3 @@ require('lualine').setup({
 	extensions = {
 	}
 })
-

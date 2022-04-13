@@ -64,6 +64,8 @@ return require('packer').startup(function()
 		require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
 	  end
 	}
+	use 'skywind3000/asyncrun.vim'
+	use 'NTBBloodbath/rest.nvim'
 
 	-- test and debug
 	use 'vim-test/vim-test'
@@ -75,8 +77,11 @@ return require('packer').startup(function()
 	use 'overcache/NeoSolarized'
 	use 'rebelot/kanagawa.nvim'
 	use 'p00f/nvim-ts-rainbow'
+	use 'glepnir/oceanic-material'
+	use 'folke/tokyonight.nvim'
 
 	-- git 
 	use 'sindrets/diffview.nvim'
+
 end)
 
