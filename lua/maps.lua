@@ -12,7 +12,7 @@ local function map()
 		{"nmap","<silent> <leader>t","<cmd>TestNearest-v<cr>"},
 		{"nmap","<silent> <leader>e","<cmd>b#<cr>"},
 		{"nmap","<silent> gsf","<cmd>GoFillStruct<cr>"},
-		{"nmap","<silent> gf","<cmd>lua vim.lsp.buf.formatting()<cr>"},
+		{"nmap","<silent> gff","<cmd>lua vim.lsp.buf.formatting()<cr>"},
 		{"nmap","<silent> gt","<cmd>GoTests<cr>"},
 		{"nmap","<silent> <space>fd","<cmd>lua vim.lsp.buf.hover()<CR>"},
 		{"nmap","<silent> <space>fs","<cmd>lua vim.lsp.buf.signature_help()<CR>"},
@@ -23,7 +23,6 @@ local function map()
 		{"nmap","<silent> <leader><leader>","<cmd>Telescope frecency<cr>"},
 
 		-- move
-
 		{"nmap","<silent> fww","<cmd>HopWord<cr>"},
 		{"nmap","<silent> fwl","<cmd>HopWordCurrentLine<cr>"},
 		{"nmap","<silent> fwa","<cmd>HopWordAC<cr>"},
@@ -41,6 +40,12 @@ local function map()
 
 		{"nmap","<silent> f22","<cmd>HopChar2<cr>"},
 		{"nmap","<silent> f2b","<cmd>HopChar2BC<cr>"},
+
+		-- operator movement
+		{"onoremap","p i("},
+		{"onoremap","b i{"},
+		{"onoremap","m i["},
+		{"onoremap","np",":<c-u>normal! f(vi(<cr>"}
 	}
 
 	for i,item in ipairs(maps) do

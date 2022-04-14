@@ -1,5 +1,4 @@
-require('impatient')
-require'impatient'.enable_profile()
+-- require('impatient')
 
 require('cmds')
 require('plugins')
@@ -23,3 +22,5 @@ require('hop_setup')
 require('fidget_setup')
 require('quickfix')
 require('rest')
+require("blame_setup")
+require("escape_setup")
