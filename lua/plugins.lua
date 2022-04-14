@@ -34,6 +34,7 @@ return require('packer').startup(function()
 	use "rafamadriz/friendly-snippets"
 	use 'simrat39/symbols-outline.nvim'
 	use 'mfussenegger/nvim-lint'
+	use 'ray-x/lsp_signature.nvim'
 
 	-- search
 	use 'nvim-telescope/telescope.nvim'

@@ -7,6 +7,9 @@ local function regCmp()
 		  		require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
 		  	end,
 		},
+		window = {
+			documentation = false
+		},
 		mapping = {
 		  ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
 		  ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
@@ -17,6 +20,20 @@ local function regCmp()
 			c = cmp.mapping.close(),
 		  }),
 		  ['<Tab>'] = cmp.mapping.confirm({ select = true }),
+		  ['<C-n>'] = function(fallback)
+							if cmp.visible() then
+								cmp.select_next_item()
+							else
+								fallback()
+							end
+    				  end,
+		  ['<C-p>'] = function(fallback)
+						if cmp.visible() then
+							cmp.select_prev_item()
+						else
+							fallback()
+						end
+    				  end,
 		  ['<CR>'] = cmp.mapping.confirm({ select = true })
 		},
 		sources = cmp.config.sources({
@@ -32,7 +49,10 @@ local function regCmp()
 
 		  }, 
 		  {
-			  name = 'buffer'
+			  name = 'buffer',
+			  option = {
+       			 get_bufnrs = function() return { vim.api.nvim_get_current_buf() } end
+      		  }
 		  },
 		  {
 			  name = 'spell'
