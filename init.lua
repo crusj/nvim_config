@@ -1,8 +1,7 @@
--- require('impatient')
-
+--require('impatient')
 require('cmds')
 require('plugins')
-require('options') 
+require('options')
 require('complete')
 
 require('nvim_tree_setup')
@@ -24,3 +23,4 @@ require('quickfix')
 require('rest')
 require("blame_setup")
 require("escape_setup")
+require("search_setup")

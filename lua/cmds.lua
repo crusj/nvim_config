@@ -15,8 +15,8 @@ vim.cmd([[let g:cursorword_delay = 100]])
 -- 跳转到方法或函数的签名行
 -- 为struct生成方法
 vim.cmd([[
-autocmd FileType go nnoremap <silent> gfc ^wve"+yO// <esc>"+pa will 
-autocmd FileType go nnoremap <silent> gmc ^f)wve"+yO// <esc>"+pa will 
+autocmd FileType go nnoremap <silent> gfc ^wve"+yO// <esc>"+pa is 
+autocmd FileType go nnoremap <silent> gmc ^f)wve"+yO// <esc>"+pa is 
 autocmd FileType go nnoremap <silent> gbc O// 
 autocmd FileType go nnoremap <silent> zf ?^func<cr>zz
 autocmd FileType go nnoremap <silent> gsm ^wv"ryve"+yf{%o<cr>func (*<esc>"+pa) name {<cr>}<esc>kf(a<esc>"rp~i <esc>/name<cr>ce

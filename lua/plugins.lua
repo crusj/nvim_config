@@ -68,6 +68,7 @@ return require('packer').startup(function()
 	use 'NTBBloodbath/rest.nvim'
 	use 'lewis6991/impatient.nvim'
 	use 'max397574/better-escape.nvim' 
+	use 'windwp/nvim-spectre'
 
 	-- test and debug
 	use 'vim-test/vim-test'
