@@ -70,6 +70,7 @@ return require('packer').startup(function()
 	use 'lewis6991/impatient.nvim'
 	use 'max397574/better-escape.nvim' 
 	use 'windwp/nvim-spectre'
+	use 'voldikss/vim-translator'
 
 	-- test and debug
 	use 'vim-test/vim-test'
