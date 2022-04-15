@@ -33,15 +33,11 @@ local function map()
 		{"nmap","<silent> fla","<cmd>HopLineAC<cr>"},
 		{"nmap","<silent> flm","<cmd>HopLineMW<cr>"},
 
-		{"nmap","<silent> f1l","<cmd>HopChar1CurrentLine<cr>"},
-		{"nmap","<silent> f11","<cmd>HopChar1<cr>"},
-		{"nmap","<silent> f1a","<cmd>HopChar1AC<cr>"},
-		{"nmap","<silent> f1b","<cmd>HopChar1BC<cr>"},
+		{"nmap","<silent> fcl","<cmd>HopChar1CurrentLine<cr>"},
+		{"nmap","<silent> fcc","<cmd>HopChar1<cr>"},
+		{"nmap","<silent> fca","<cmd>HopChar1AC<cr>"},
+		{"nmap","<silent> fcb","<cmd>HopChar1BC<cr>"},
 
-		{"nmap","<silent> f2l","<cmd>HopChar2CurrentLine<cr>"},
-		{"nmap","<silent> f22","<cmd>HopChar2<cr>"},
-		{"nmap","<silent> f2b","<cmd>HopChar2BC<cr>"},
-		{"nmap","<silent> f2a","<cmd>HopChar2AC<cr>"},
 
 		-- operator movement
 		{"onoremap","p i("},

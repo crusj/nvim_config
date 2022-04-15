@@ -7,18 +7,8 @@ local function regCmp()
 		  		require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
 		  	end,
 		},
-		window = {
-			documentation = false
-		},
 		mapping = {
-		  ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-		  ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-		  ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
 		  ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-		  ['<C-e>'] = cmp.mapping({
-			i = cmp.mapping.abort(),
-			c = cmp.mapping.close(),
-		  }),
 		  ['<Tab>'] = cmp.mapping.confirm({ select = true }),
 		  ['<C-n>'] = function(fallback)
 							if cmp.visible() then
@@ -47,7 +37,7 @@ local function regCmp()
 			  name = 'luasnip' ,
 			  priority = 100,
 
-		  }, 
+		  },
 		  {
 			  name = 'buffer',
 			  option = {
@@ -57,7 +47,7 @@ local function regCmp()
 		  {
 			  name = 'spell'
 		  }
-		}), 
+		}),
 		formatting = {
 			format = lspkind.cmp_format({
 				mode = 'symbol_text', -- show only symbol annotations

@@ -1,7 +1,13 @@
 local lspconfig = require("lspconfig")
 
-local function custom_attach()
-	require "lsp_signature".on_attach({})
+local function custom_attach(client, bufnr)
+	require "lsp_signature".on_attach({
+		bind = true, -- This is mandatory, otherwise border config won't get registered.
+		handler_opts = {
+			border = "rounded"
+		},
+		hint_prefix = '🤓 '
+	},bufnr)
 end
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
