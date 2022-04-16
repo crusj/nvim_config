@@ -71,6 +71,7 @@ return require('packer').startup(function()
 	use 'max397574/better-escape.nvim' 
 	use 'windwp/nvim-spectre'
 	use 'voldikss/vim-translator'
+	use {"akinsho/toggleterm.nvim"}
 
 	-- test and debug
 	use 'vim-test/vim-test'
