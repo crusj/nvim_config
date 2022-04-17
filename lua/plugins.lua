@@ -72,6 +72,7 @@ return require('packer').startup(function()
 	use 'windwp/nvim-spectre'
 	use 'voldikss/vim-translator'
 	use {"akinsho/toggleterm.nvim"}
+	use 'anuvyklack/pretty-fold.nvim'
 
 	-- test and debug
 	use 'vim-test/vim-test'
