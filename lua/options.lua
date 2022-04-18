@@ -17,8 +17,10 @@ local function load_options()
 		signcolumn = "yes",
 		shell = "/bin/bash",
 		guifont='GoMono Nerd Font Mono:h16',
-		foldmethod = "indent",
-		foldcolumn = "auto",
+		laststatus = 3,
+
+		-- foldmethod = "indent",
+		-- foldcolumn = "auto",
 	}
 
 	for option,value in pairs(global_options) do

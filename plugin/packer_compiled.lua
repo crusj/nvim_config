@@ -191,6 +191,7 @@ _G.packer_plugins = {
     url = "https://github.com/onsails/lspkind-nvim"
   },
   ["lualine.nvim"] = {
+    config = { "\27LJ\2\n4\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\21set laststatus=3\bcmd\bvim\0" },
     loaded = true,
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
@@ -271,7 +272,6 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["pretty-fold.nvim"] = {
-    config = { "\27LJ\2\na\0\0\3\0\4\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\0\0'\2\3\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\24pretty-fold.preview\nsetup\16pretty-fold\frequire\0" },
     loaded = true,
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/pretty-fold.nvim",
     url = "https://github.com/anuvyklack/pretty-fold.nvim"
@@ -373,10 +373,10 @@ time([[Defining packer_plugins]], false)
 time([[Config for hop.nvim]], true)
 try_loadstring("\27LJ\2\nU\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\tkeys\28etovxqpdygfblzhckisuran\nsetup\bhop\frequire\0", "config", "hop.nvim")
 time([[Config for hop.nvim]], false)
--- Config for: pretty-fold.nvim
-time([[Config for pretty-fold.nvim]], true)
-try_loadstring("\27LJ\2\na\0\0\3\0\4\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\0\0'\2\3\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\24pretty-fold.preview\nsetup\16pretty-fold\frequire\0", "config", "pretty-fold.nvim")
-time([[Config for pretty-fold.nvim]], false)
+-- Config for: lualine.nvim
+time([[Config for lualine.nvim]], true)
+try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\21set laststatus=3\bcmd\bvim\0", "config", "lualine.nvim")
+time([[Config for lualine.nvim]], false)
 if should_profile then save_profiles() end
 
 end)

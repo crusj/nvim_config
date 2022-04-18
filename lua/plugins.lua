@@ -15,7 +15,12 @@ return require('packer').startup(function()
 	use 'Shatur/neovim-session-manager'
 	use 'kyazdani42/nvim-tree.lua'
 	use {'akinsho/bufferline.nvim', tag = "*", requires = 'kyazdani42/nvim-web-devicons'}
-  	use 'nvim-lualine/lualine.nvim'
+  	use {
+		'nvim-lualine/lualine.nvim',
+		config = function ()
+			vim.cmd([[set laststatus=3]])
+		end
+	}
 	use 'nvim-lua/plenary.nvim'
 	use 'j-hui/fidget.nvim'
 

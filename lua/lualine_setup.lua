@@ -1,9 +1,9 @@
 local lualine = require("lualine")
 lualine.setup({
 	options = {
-		theme = 'tokyonight',
+		theme = 'solarized_light',
 		component_separators = { left = '', right = ''},
-		disabled_filetypes = {'Outline','NvimTree','dashboard'},
+		disabled_filetypes = {},
 		section_separators = { left = '', right = ''},
 	},
 	sections = {
