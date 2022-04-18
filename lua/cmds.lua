@@ -4,9 +4,12 @@ set nohlsearch
 ]])
 
 -- neovide
-vim.cmd([[let g:neovide_cursor_vfx_mode = "pixiedust"]])
-vim.cmd([[let g:neovide_remember_window_size = v:true]])
-vim.cmd([[let g:cursorword_delay = 100]])
+vim.cmd([[
+let g:neovide_cursor_vfx_mode = "pixiedust"
+let g:neovide_remember_window_size = v:true
+let g:neovide_cursor_vfx_opacity=200.0
+let g:neovide_transparency=1
+]])
 
 -- golang
 -- 为golang函数生成注释: // functionName is 
