@@ -67,7 +67,7 @@ function CloseBuffer()
 	  bufferline.cycle(-1)
   end
 
-  vim.cmd('bdelete ' .. bufferToDelete)
+  vim.cmd('bdelete! ' .. bufferToDelete)
 end
 
 vim.cmd([[nnoremap <silent> \x <cmd> lua CloseBuffer()<cr>]])
