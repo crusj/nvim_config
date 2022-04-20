@@ -1,4 +1,12 @@
+require("luasnip.loaders.from_vscode").lazy_load()
 local lspkind = require('lspkind')
+local luasnip = require("luasnip")
+
+local has_words_before = function()
+  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+end
+
 local function regCmp()
 	local cmp = require('cmp')
 	require('cmp').setup({
@@ -9,7 +17,31 @@ local function regCmp()
 		},
 		mapping = {
 		  ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-		  ['<Tab>'] = cmp.mapping.confirm({ select = true }),
+		  ['<CR>'] = function(fallback)
+			if cmp.visible() then
+				cmp.confirm()
+			else
+				fallback() -- If you are using vim-endwise, this fallback function will be behaive as the vim-endwise.
+			end
+		  end,
+		  ['<Tab>'] = cmp.mapping(function (fallback)
+		  	 if cmp.visible() then
+			 	 cmp.select_next_item()
+			 elseif luasnip.expand_or_jumpable() then
+			 	 luasnip.expand_or_jump()
+			 elseif has_words_before() then
+			 	 cmp.complete()
+			 else
+			 	fallback()
+			 end
+		  end,{"i","s"}),
+		  ['.'] = cmp.mapping(function (fallback)
+		  	if luasnip.expand_or_jumpable() then
+		  		luasnip.expand_or_jump()
+			else
+				fallback()
+		  	end
+		  end,{"i"}),
 		  ['<C-n>'] = function(fallback)
 							if cmp.visible() then
 								cmp.select_next_item()
@@ -24,7 +56,6 @@ local function regCmp()
 							fallback()
 						end
     				  end,
-		  ['<CR>'] = cmp.mapping.confirm({ select = true })
 		},
 		sources = cmp.config.sources({
 		  {
@@ -35,7 +66,6 @@ local function regCmp()
 		  },
 		  {
 			  name = 'luasnip' ,
-			  priority = 100,
 
 		  },
 		  {
@@ -58,8 +88,3 @@ local function regCmp()
   })
 end
 regCmp()
-
-vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})

@@ -73,7 +73,6 @@ return require('packer').startup(function()
 	use 'skywind3000/asyncrun.vim'
 	use 'NTBBloodbath/rest.nvim'
 	use 'lewis6991/impatient.nvim'
-	use 'max397574/better-escape.nvim' 
 	use 'windwp/nvim-spectre'
 	use 'voldikss/vim-translator'
 	use {"akinsho/toggleterm.nvim"}

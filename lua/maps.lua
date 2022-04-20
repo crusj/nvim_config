@@ -25,18 +25,18 @@ local function map()
 		-- move
 		{"nmap","<silent> fww","<cmd>HopWord<cr>"},
 		{"nmap","<silent> fwl","<cmd>HopWordCurrentLine<cr>"},
-		{"nmap","<silent> fwa","<cmd>HopWordAC<cr>"},
-		{"nmap","<silent> fwb","<cmd>HopWordBC<cr>"},
+		{"nmap","<silent> fwj","<cmd>HopWordAC<cr>"},
+		{"nmap","<silent> fwk","<cmd>HopWordBC<cr>"},
 
 		{"nmap","<silent> fll","<cmd>HopLine<cr>"},
 		{"nmap","<silent> flb","<cmd>HopLineBC<cr>"},
-		{"nmap","<silent> fla","<cmd>HopLineAC<cr>"},
-		{"nmap","<silent> flm","<cmd>HopLineMW<cr>"},
+		{"nmap","<silent> flj","<cmd>HopLineAC<cr>"},
+		{"nmap","<silent> flk","<cmd>HopLineMW<cr>"},
 
 		{"nmap","<silent> fcl","<cmd>HopChar1CurrentLine<cr>"},
 		{"nmap","<silent> fcc","<cmd>HopChar1<cr>"},
-		{"nmap","<silent> fca","<cmd>HopChar1AC<cr>"},
-		{"nmap","<silent> fcb","<cmd>HopChar1BC<cr>"},
+		{"nmap","<silent> fcj","<cmd>HopChar1AC<cr>"},
+		{"nmap","<silent> fck","<cmd>HopChar1BC<cr>"},
 
 
 		-- operator movement
