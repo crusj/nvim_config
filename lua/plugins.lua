@@ -4,8 +4,8 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function()
-  -- Packer can manage itself
-  	use 'wbthomason/packer.nvim'
+	-- Packer can manage itself
+	use 'wbthomason/packer.nvim'
 
 	-- view
 	use 'kyazdani42/nvim-web-devicons'
@@ -14,10 +14,10 @@ return require('packer').startup(function()
 	use 'glepnir/dashboard-nvim'
 	use 'Shatur/neovim-session-manager'
 	use 'kyazdani42/nvim-tree.lua'
-	use {'akinsho/bufferline.nvim', tag = "*", requires = 'kyazdani42/nvim-web-devicons'}
-  	use {
+	use { 'akinsho/bufferline.nvim', tag = "*", requires = 'kyazdani42/nvim-web-devicons' }
+	use {
 		'nvim-lualine/lualine.nvim',
-		config = function ()
+		config = function()
 			vim.cmd([[set laststatus=3]])
 		end
 	}
@@ -25,13 +25,13 @@ return require('packer').startup(function()
 	use 'j-hui/fidget.nvim'
 
 	-- complete
-  	use 'neovim/nvim-lspconfig'
+	use 'neovim/nvim-lspconfig'
 	use 'hrsh7th/nvim-cmp'
-  	use 'hrsh7th/cmp-nvim-lsp'
+	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-nvim-lua'
-  	use 'hrsh7th/cmp-buffer'
-  	use 'hrsh7th/cmp-path'
-  	use 'hrsh7th/cmp-cmdline'
+	use 'hrsh7th/cmp-buffer'
+	use 'hrsh7th/cmp-path'
+	use 'hrsh7th/cmp-cmdline'
 	use 'f3fora/cmp-spell'
 	use 'saadparwaiz1/cmp_luasnip'
 	use 'L3MON4D3/LuaSnip'
@@ -43,13 +43,13 @@ return require('packer').startup(function()
 
 	-- search
 	use 'nvim-telescope/telescope.nvim'
-	use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-	use {'nvim-telescope/telescope-ui-select.nvim' }
-	use {'kevinhwang91/nvim-bqf'}
-	use {'nvim-treesitter/nvim-treesitter',run = ':TSUpdate'}
-	use {'junegunn/fzf', run = function()
-    	vim.fn['fzf#install']()
-		end
+	use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+	use { 'nvim-telescope/telescope-ui-select.nvim' }
+	use { 'kevinhwang91/nvim-bqf' }
+	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+	use { 'junegunn/fzf', run = function()
+		vim.fn['fzf#install']()
+	end
 	}
 	use { "tami5/sqlite.lua" }
 	use 'nvim-telescope/telescope-frecency.nvim'
@@ -63,20 +63,22 @@ return require('packer').startup(function()
 	use 'tpope/vim-surround'
 	use 'terrortylor/nvim-comment'
 	use {
-	  'phaazon/hop.nvim',
-	  branch = 'v1', -- optional but strongly recommended
-	  config = function()
-		-- you can configure Hop the way you like here; see :h hop-config
-		require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
-	  end
+		'phaazon/hop.nvim',
+		branch = 'v1', -- optional but strongly recommended
+		config = function()
+			-- you can configure Hop the way you like here; see :h hop-config
+			require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+		end
 	}
 	use 'skywind3000/asyncrun.vim'
 	use 'NTBBloodbath/rest.nvim'
 	use 'lewis6991/impatient.nvim'
 	use 'windwp/nvim-spectre'
 	use 'voldikss/vim-translator'
-	use {"akinsho/toggleterm.nvim"}
-	use 'anuvyklack/pretty-fold.nvim'
+	use { "akinsho/toggleterm.nvim" }
+
+	-- treesitter
+	use 'SmiteshP/nvim-gps'
 
 	-- test and debug
 	use 'vim-test/vim-test'
@@ -87,12 +89,12 @@ return require('packer').startup(function()
 	use 'rakr/vim-one'
 	use 'overcache/NeoSolarized'
 	use 'rebelot/kanagawa.nvim'
-	use 'p00f/nvim-ts-rainbow'
 	use 'glepnir/oceanic-material'
 	use 'folke/tokyonight.nvim'
+	use 'ishan9299/nvim-solarized-lua'
 
-	-- git 
+
+	-- git
 	use 'sindrets/diffview.nvim'
 	use 'f-person/git-blame.nvim'
 end)
-

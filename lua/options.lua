@@ -16,16 +16,16 @@ local function load_options()
 		-- foldmethod = "indent",
 		signcolumn = "yes",
 		shell = "/bin/bash",
-		guifont='GoMono Nerd Font Mono:h16',
+		guifont = 'GoMono Nerd Font Mono:h16',
 		laststatus = 3,
 
 		-- foldmethod = "indent",
 		-- foldcolumn = "auto",
 	}
 
-	for option,value in pairs(global_options) do
+	for option, value in pairs(global_options) do
 		vim.o[option] = value
 	end
 end
-load_options()
 
+load_options()

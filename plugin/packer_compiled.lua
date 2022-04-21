@@ -84,11 +84,6 @@ _G.packer_plugins = {
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/asyncrun.vim",
     url = "https://github.com/skywind3000/asyncrun.vim"
   },
-  ["better-escape.nvim"] = {
-    loaded = true,
-    path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/better-escape.nvim",
-    url = "https://github.com/max397574/better-escape.nvim"
-  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
@@ -221,6 +216,11 @@ _G.packer_plugins = {
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/nvim-comment",
     url = "https://github.com/terrortylor/nvim-comment"
   },
+  ["nvim-gps"] = {
+    loaded = true,
+    path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/nvim-gps",
+    url = "https://github.com/SmiteshP/nvim-gps"
+  },
   ["nvim-lint"] = {
     loaded = true,
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/nvim-lint",
@@ -246,11 +246,6 @@ _G.packer_plugins = {
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
-  ["nvim-ts-rainbow"] = {
-    loaded = true,
-    path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
-    url = "https://github.com/p00f/nvim-ts-rainbow"
-  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
@@ -270,11 +265,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
-  },
-  ["pretty-fold.nvim"] = {
-    loaded = true,
-    path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/pretty-fold.nvim",
-    url = "https://github.com/anuvyklack/pretty-fold.nvim"
   },
   ["rest.nvim"] = {
     loaded = true,
@@ -345,6 +335,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/vim-one",
     url = "https://github.com/rakr/vim-one"
+  },
+  ["vim-rainbow"] = {
+    loaded = true,
+    path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/vim-rainbow",
+    url = "https://github.com/frazrepo/vim-rainbow"
   },
   ["vim-surround"] = {
     loaded = true,
