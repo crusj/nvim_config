@@ -40,6 +40,7 @@ return require('packer').startup(function()
 	use 'simrat39/symbols-outline.nvim'
 	use 'mfussenegger/nvim-lint'
 	use 'ray-x/lsp_signature.nvim'
+	use 'ray-x/go.nvim'
 
 	-- search
 	use 'nvim-telescope/telescope.nvim'
@@ -76,6 +77,10 @@ return require('packer').startup(function()
 	use 'windwp/nvim-spectre'
 	use 'voldikss/vim-translator'
 	use { "akinsho/toggleterm.nvim" }
+	use {
+		'ray-x/guihua.lua',
+		run = 'cd lua/fzy && make'
+	}
 
 	-- treesitter
 	use 'SmiteshP/nvim-gps'
@@ -83,7 +88,6 @@ return require('packer').startup(function()
 	-- test and debug
 	use 'vim-test/vim-test'
 	use 'sebdah/vim-delve'
-	use 'buoto/gotests-vim'
 
 	-- colorscheme
 	use 'rakr/vim-one'

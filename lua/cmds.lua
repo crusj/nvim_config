@@ -17,14 +17,11 @@ let g:neovide_transparency=1
 ]])
 
 -- golang
--- 为golang函数生成注释: // functionName is
--- 为golang方法生成注释: // methodName is
 -- 为golang当前行生成注释: //
+-- 为golang当前行末尾生成注释: //
 -- 跳转到方法或函数的签名行
 -- 为struct生成方法
 vim.cmd([[
-autocmd FileType go nnoremap <silent> gfc ^wve"+yO// <esc>"+pa is 
-autocmd FileType go nnoremap <silent> gmc ^f)wve"+yO// <esc>"+pa is 
 autocmd FileType go nnoremap <silent> gbc O// 
 autocmd FileType go nnoremap <silent> gac A //  
 autocmd FileType go nnoremap <silent> zf ?^func<cr>zz
