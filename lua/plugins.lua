@@ -84,6 +84,7 @@ return require('packer').startup(function()
 
 	-- treesitter
 	use 'SmiteshP/nvim-gps'
+	use 'p00f/nvim-ts-rainbow'
 
 	-- test and debug
 	use 'vim-test/vim-test'

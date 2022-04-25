@@ -24,4 +24,6 @@ require("blame_setup")
 require("search_setup")
 require("tools_setup")
 require("gps_setup")
--- require("pretty_fold_setup")
+require('guihua_setup')
+require('my_setup')
+

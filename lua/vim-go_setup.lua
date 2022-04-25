@@ -13,6 +13,6 @@ autocmd FileType go nnoremap <silent> gfp <cmd>GoFixPlurals<cr>
 
 -- Run gofmt + goimport on save
 -- Run gofmt on save
-vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').gofmt() ]], false)
+-- vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').gofmt() ]], false)
 vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
 
