@@ -13,6 +13,7 @@ tabnine:setup({
 	ignored_file_types = { -- default is not to ignore
 		NvimTree = true,
 		["structrue-go"] = true,
+		spectre_panel = true
 	};
 	show_prediction_strength = false;
 })

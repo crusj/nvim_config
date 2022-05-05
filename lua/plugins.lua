@@ -11,8 +11,6 @@ return require('packer').startup(function()
 	use 'kyazdani42/nvim-web-devicons'
 
 	-- status
-	use 'glepnir/dashboard-nvim'
-	use 'Shatur/neovim-session-manager'
 	use 'kyazdani42/nvim-tree.lua'
 	use { 'akinsho/bufferline.nvim', tag = "*", requires = 'kyazdani42/nvim-web-devicons' }
 	use {
@@ -86,6 +84,15 @@ return require('packer').startup(function()
 		branch = "main"
 	}
 	use 'crusj/bookmarks.nvim'
+	use {
+		'rmagatti/auto-session',
+		config = function()
+			require('auto-session').setup {
+				log_level = 'info',
+			}
+		end
+	}
+	use 'rmagatti/session-lens'
 
 	-- treesitter
 	use 'SmiteshP/nvim-gps'

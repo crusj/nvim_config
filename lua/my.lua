@@ -11,4 +11,13 @@ function my.getlines()
 	end
 end
 
+-- 
+function my.session_started()
+	local win = vim.api.nvim_get_current_win()
+	vim.api.nvim_exec("NvimTreeOpen",{})
+	vim.api.nvim_set_current_win(win)
+	vim.api.nvim_exec("NvimTreeFindFile",{})
+	vim.api.nvim_set_current_win(win)
+end
+
 return my
