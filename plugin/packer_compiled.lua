@@ -69,6 +69,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["JABS.nvim"] = {
+    loaded = true,
+    path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/JABS.nvim",
+    url = "https://github.com/crusj/JABS.nvim"
+  },
   LuaSnip = {
     loaded = true,
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -256,6 +261,11 @@ _G.packer_plugins = {
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-ts-rainbow"] = {
+    loaded = true,
+    path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
+    url = "https://github.com/p00f/nvim-ts-rainbow"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
@@ -290,11 +300,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/sqlite.lua",
     url = "https://github.com/tami5/sqlite.lua"
-  },
-  ["symbols-outline.nvim"] = {
-    loaded = true,
-    path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim",
-    url = "https://github.com/simrat39/symbols-outline.nvim"
   },
   ["telescope-frecency.nvim"] = {
     loaded = true,
@@ -361,6 +366,11 @@ _G.packer_plugins = {
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/vim-translator",
     url = "https://github.com/voldikss/vim-translator"
   },
+  ["vista.vim"] = {
+    loaded = true,
+    path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/vista.vim",
+    url = "https://github.com/liuchengxu/vista.vim"
+  },
   ["yode-nvim"] = {
     loaded = true,
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/yode-nvim",
@@ -369,14 +379,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: hop.nvim
-time([[Config for hop.nvim]], true)
-try_loadstring("\27LJ\2\nU\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\tkeys\28etovxqpdygfblzhckisuran\nsetup\bhop\frequire\0", "config", "hop.nvim")
-time([[Config for hop.nvim]], false)
 -- Config for: lualine.nvim
 time([[Config for lualine.nvim]], true)
 try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\21set laststatus=3\bcmd\bvim\0", "config", "lualine.nvim")
 time([[Config for lualine.nvim]], false)
+-- Config for: hop.nvim
+time([[Config for hop.nvim]], true)
+try_loadstring("\27LJ\2\nU\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\tkeys\28etovxqpdygfblzhckisuran\nsetup\bhop\frequire\0", "config", "hop.nvim")
+time([[Config for hop.nvim]], false)
 if should_profile then save_profiles() end
 
 end)

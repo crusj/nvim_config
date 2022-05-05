@@ -1,6 +1,7 @@
 -- editor
 vim.cmd([[
 set nohlsearch
+let g:cursorword_disable_filetypes = ["structrue-go","bookmarks"]
 ]])
 
 -- diagnostic

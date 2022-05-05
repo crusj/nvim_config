@@ -37,10 +37,10 @@ return require('packer').startup(function()
 	use 'L3MON4D3/LuaSnip'
 	use 'onsails/lspkind-nvim'
 	use "rafamadriz/friendly-snippets"
-	use 'simrat39/symbols-outline.nvim'
 	use 'mfussenegger/nvim-lint'
 	use 'ray-x/lsp_signature.nvim'
 	use 'ray-x/go.nvim'
+	use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
 
 	-- search
 	use 'nvim-telescope/telescope.nvim'
@@ -58,8 +58,8 @@ return require('packer').startup(function()
 	-- tools
 	use 'hoschi/yode-nvim'
 	use 'voldikss/vim-floaterm'
-	use 'itchyny/vim-cursorword'
 	use 'windwp/nvim-autopairs'
+	use 'xiyaowong/nvim-cursorword'
 	use 'AndrewRadev/splitjoin.vim'
 	use 'tpope/vim-surround'
 	use 'terrortylor/nvim-comment'
@@ -81,6 +81,11 @@ return require('packer').startup(function()
 		'ray-x/guihua.lua',
 		run = 'cd lua/fzy && make'
 	}
+	use {
+		'crusj/structrue-go.nvim',
+		branch = "main"
+	}
+	use 'crusj/bookmarks.nvim'
 
 	-- treesitter
 	use 'SmiteshP/nvim-gps'
@@ -88,7 +93,10 @@ return require('packer').startup(function()
 
 	-- test and debug
 	use 'vim-test/vim-test'
-	use 'sebdah/vim-delve'
+	use 'mfussenegger/nvim-dap'
+	use 'leoluz/nvim-dap-go'
+	use 'rcarriga/nvim-dap-ui'
+	use 'theHamsta/nvim-dap-virtual-text'
 
 	-- colorscheme
 	use 'rakr/vim-one'

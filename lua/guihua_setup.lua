@@ -1,3 +1,3 @@
 vim.cmd([[
-autocmd FileType go nnoremap <silent> \q :lua require('go.term').close()<cr>
+autocmd FileType go nnoremap <silent> \q :GoTermClose<cr>
 ]])

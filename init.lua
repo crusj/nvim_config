@@ -26,4 +26,7 @@ require("tools_setup")
 require("gps_setup")
 require('guihua_setup')
 require('my_setup')
+require('dap_setup')
 
+require("strutrue_go_setup")
+require("bookmarks_setup")

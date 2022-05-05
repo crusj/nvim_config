@@ -1,6 +1,29 @@
+local cmp = require('cmp')
 require("luasnip.loaders.from_vscode").lazy_load()
-local lspkind = require('lspkind')
 local luasnip = require("luasnip")
+local compare = require('cmp.config.compare')
+
+local tabnine = require('cmp_tabnine.config')
+tabnine:setup({
+	max_lines = 1000;
+	max_num_results = 5;
+	sort = true;
+	run_on_every_keystroke = true;
+	snippet_placeholder = '..';
+	ignored_file_types = { -- default is not to ignore
+		NvimTree = true,
+		["structrue-go"] = true,
+	};
+	show_prediction_strength = false;
+})
+
+
+local lspkind = require('lspkind')
+lspkind.init({
+	symbol_map = {
+		TN = ""
+	}
+})
 
 local has_words_before = function()
 	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -8,8 +31,20 @@ local has_words_before = function()
 end
 
 local function regCmp()
-	local cmp = require('cmp')
 	require('cmp').setup({
+		sorting = {
+			comparators = {
+				require('cmp_tabnine.compare'),
+				compare.offset,
+				compare.exact,
+				compare.score,
+				compare.recently_used,
+				compare.kind,
+				compare.sort_text,
+				compare.length,
+				compare.order,
+			},
+		},
 		snippet = {
 			expand = function(args)
 				require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
@@ -69,6 +104,9 @@ local function regCmp()
 
 			},
 			{
+				name = 'cmp_tabnine'
+			},
+			{
 				name = 'buffer',
 				option = {
 					get_bufnrs = function() return { vim.api.nvim_get_current_buf() } end
@@ -82,6 +120,16 @@ local function regCmp()
 			format = lspkind.cmp_format({
 				mode = 'symbol_text', -- show only symbol annotations
 				maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+				before = function(entry, vim_item)
+					if entry.source.name == 'cmp_tabnine' then
+						if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
+							vim_item.menu = entry.completion_item.data.detail
+							vim_item.kind = "TN"
+						end
+					end
+
+					return vim_item
+				end
 			})
 		},
 		preselect = cmp.PreselectMode.None,
