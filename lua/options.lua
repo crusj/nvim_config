@@ -8,8 +8,8 @@ local function load_options()
 		ts = 4,
 		shiftwidth = 4,
 		mouse = "a",
-		nu = true,
-		rnu = true,
+		--nu = true,
+		-- rnu = true,
 		cursorline = true,
 		clipboard = "unnamedplus",
 		backspace = "indent,eol,start",
@@ -17,8 +17,6 @@ local function load_options()
 		signcolumn = "yes",
 		shell = "/bin/bash",
 		guifont = 'GoMono Nerd Font Mono:h16',
-		laststatus = 3,
-
 		-- foldmethod = "indent",
 		-- foldcolumn = "auto",
 	}

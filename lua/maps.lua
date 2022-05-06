@@ -42,13 +42,12 @@ local function map()
 		{ "onoremap", "np", ":<c-u>normal! f(vi(<cr>" }
 	}
 
-	for i, item in ipairs(maps) do
+	for _, item in ipairs(maps) do
 		local cmd = ""
-		for j, piece in ipairs(item) do
+		for _, piece in ipairs(item) do
 			cmd = cmd .. " " .. piece
 		end
 		vim.cmd(cmd)
 	end
 end
-
 map()

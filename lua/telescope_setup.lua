@@ -55,6 +55,7 @@ vim.keymap.set("n","<space>s",":SearchSession<cr>",{silent = true})
 
 vim.cmd([[
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>f" <cmd>lua require('telescope.builtin').registers()<cr>
 nnoremap <leader>fs <cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>
 nnoremap <leader>fd <cmd>lua require('telescope.builtin').lsp_definitions()<cr>
 nnoremap <leader>fp <cmd>lua require('telescope.builtin').treesitter()<cr>

@@ -1,23 +1,24 @@
-local my = {}
-function my.test()
-	local output = vim.api.nvim_exec("grep func\\ main\\(\\) %", true)
-	print(output)
-end
+local my     = {}
+local notify = require("notify")
 
-function my.getlines()
-	local lines = vim.api.nvim_buf_get_lines(0,1,-1,true)
-	for _, v in ipairs(lines) do
-		print(v)
-	end
-end
+vim.cmd([[
+highlight NotifyWARNIcon guifg=Green
+highlight NotifyINFOBorder guifg=Green
+highlight NotifyINFOTitle guifg=Green
+]])
 
--- 
-function my.session_started()
-	local win = vim.api.nvim_get_current_win()
-	vim.api.nvim_exec("NvimTreeOpen",{})
-	vim.api.nvim_set_current_win(win)
-	vim.api.nvim_exec("NvimTreeFindFile",{})
-	vim.api.nvim_set_current_win(win)
+function my.generate_go_tags()
+	local cwd = vim.fn.getcwd()
+	local cmd = "rm tags && gotags -R " .. cwd .. " > tags"
+	vim.fn.jobstart(cmd, {
+		on_exit = function()
+			if vim.loop.fs_stat(cwd .. "/tags") then
+				notify.notify("Success", "info", {
+					title = "Generate go tags",
+				})
+			end
+		end
+	})
 end
 
 return my

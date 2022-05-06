@@ -93,6 +93,7 @@ return require('packer').startup(function()
 		end
 	}
 	use 'rmagatti/session-lens'
+	use 'rcarriga/nvim-notify'
 
 	-- treesitter
 	use 'SmiteshP/nvim-gps'
