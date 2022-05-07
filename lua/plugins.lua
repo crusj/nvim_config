@@ -94,6 +94,8 @@ return require('packer').startup(function()
 	}
 	use 'rmagatti/session-lens'
 	use 'rcarriga/nvim-notify'
+	--use "lukas-reineke/indent-blankline.nvim"
+	use 'simrat39/symbols-outline.nvim'
 
 	-- treesitter
 	use 'SmiteshP/nvim-gps'
