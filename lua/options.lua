@@ -29,6 +29,9 @@ end
 --hl
 vim.api.nvim_create_autocmd("VimEnter", {
 	callback = function()
+		vim.cmd([[
+			highlight CmpItemAbbrMatch guifg=#268bd2
+		]])
 	end
 })
 
@@ -57,9 +60,9 @@ let g:neovide_remember_window_size = v:true
 let g:neovide_cursor_vfx_opacity=200.0
 let g:neovide_transparency=1
 ]])
-vim.api.nvim_set_keymap("n","<space>dk","<cmd>lua vim.diagnostic.goto_prev()<cr>",{silent=true})
-vim.api.nvim_set_keymap("n","<space>dj","<cmd>lua vim.diagnostic.goto_next()<cr>",{silent=true})
-vim.api.nvim_set_keymap("n","<space>dd","<cmd>lua vim.diagnostic.open_float()<cr>",{silent=true})
+vim.api.nvim_set_keymap("n", "<space>dk", "<cmd>lua vim.diagnostic.goto_prev()<cr>", { silent = true })
+vim.api.nvim_set_keymap("n", "<space>dj", "<cmd>lua vim.diagnostic.goto_next()<cr>", { silent = true })
+vim.api.nvim_set_keymap("n", "<space>dd", "<cmd>lua vim.diagnostic.open_float()<cr>", { silent = true })
 
 -- golang
 -- 为golang当前行生成注释: //

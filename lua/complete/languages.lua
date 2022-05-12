@@ -21,14 +21,13 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 
 -- golang
 lspconfig['gopls'].setup {
-	debounce_text_changes = 150,
 	capabilities = capabilities,
 	on_attach = custom_attach,
 	settings = {
 		gopls = {
 			gofumpt = true
 		}
-	}
+	},
 }
 
 -- lua
@@ -37,7 +36,6 @@ table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
 lspconfig['sumneko_lua'].setup {
-	debounce_text_changes = 150,
 	capabilities = capabilities,
 	on_attach = custom_attach,
 	settings = {

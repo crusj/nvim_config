@@ -1,4 +1,4 @@
-require('impatient')
+--require('impatient')
 require('options')
 require('plugins')
 require('complete')
@@ -37,3 +37,4 @@ require("hierarchy-tree-go").setup({
 		open = "\\ho" ,
 	}
 })
+require('wilder_setup')
