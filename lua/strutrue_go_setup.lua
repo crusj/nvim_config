@@ -7,4 +7,10 @@ require"structrue-go".setup({
 			hl = "guifg=#42a7f5",
 		},
 	},
+	keymap = {
+		toggle = "<space>fh",
+		fold_toggle = "o",
+		preview_open = "<space>fp"
+
+	}
 })

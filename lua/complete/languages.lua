@@ -6,10 +6,10 @@ local function custom_attach(client, bufnr)
 		handler_opts                   = {
 			border = "rounded"
 		},
-		hint_prefix                    = '🤓 ',
-		floating_window                = true,
+		hint_prefix                    = '👾 ',
+		floating_window                = false,
 		doc_lines                      = 0,
-		hint_enable                    = false,
+		hint_enable                    = true,
 		floating_window_above_cur_line = true,
 		floating_window_off_x          = 1, -- adjust float windows x position.
 		floating_window_off_y          = 1
@@ -21,6 +21,7 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 
 -- golang
 lspconfig['gopls'].setup {
+	debounce_text_changes = 150,
 	capabilities = capabilities,
 	on_attach = custom_attach,
 	settings = {
@@ -36,6 +37,7 @@ table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
 lspconfig['sumneko_lua'].setup {
+	debounce_text_changes = 150,
 	capabilities = capabilities,
 	on_attach = custom_attach,
 	settings = {
@@ -53,7 +55,7 @@ lspconfig['sumneko_lua'].setup {
 			workspace = {
 				-- Make the server aware of Neovim runtime files
 				-- library = vim.api.nvim_get_runtime_file("", true),
-				library  = {"/Users/crusj/.local/share/nvim/site/pack/packer/start/packer.nvim"}
+				library = { "/Users/crusj/.local/share/nvim/site/pack/packer/start/packer.nvim" }
 			},
 			-- Do not send telemetry data containing a randomized but unique identifier
 			telemetry = {

@@ -96,6 +96,11 @@ return require('packer').startup(function()
 	use 'rcarriga/nvim-notify'
 	--use "lukas-reineke/indent-blankline.nvim"
 	use 'simrat39/symbols-outline.nvim'
+	use {
+		'crusj/hierarchy-tree-go.nvim',
+		requires = 'neovim/nvim-lspconfig'
+	}
+
 
 	-- treesitter
 	use 'SmiteshP/nvim-gps'

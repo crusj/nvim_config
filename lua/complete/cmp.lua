@@ -1,22 +1,36 @@
 local cmp = require('cmp')
 require("luasnip.loaders.from_vscode").lazy_load()
 local luasnip = require("luasnip")
+local types = require("luasnip.util.types")
+
+
+luasnip.config.set_config({
+	ext_opts = {
+		[types.snippet] = {
+			active = {
+				virt_text = { { '🌈'} },
+				hl_mode = "combine"
+			},
+		}
+	}
+})
+
 local compare = require('cmp.config.compare')
 
-local tabnine = require('cmp_tabnine.config')
-tabnine:setup({
-	max_lines = 1000;
-	max_num_results = 5;
-	sort = true;
-	run_on_every_keystroke = true;
-	snippet_placeholder = '..';
-	ignored_file_types = { -- default is not to ignore
-		NvimTree = true,
-		["structrue-go"] = true,
-		spectre_panel = true
-	};
-	show_prediction_strength = false;
-})
+-- local tabnine = require('cmp_tabnine.config')
+-- tabnine:setup({
+-- 	max_lines = 1000;
+-- 	max_num_results = 5;
+-- 	sort = true;
+-- 	run_on_every_keystroke = true;
+-- 	snippet_placeholder = '..';
+-- 	ignored_file_types = { -- default is not to ignore
+-- 		NvimTree = true,
+-- 		["structrue-go"] = true,
+-- 		spectre_panel = true
+-- 	};
+-- 	show_prediction_strength = false;
+-- })
 
 
 local lspkind = require('lspkind')
@@ -35,7 +49,7 @@ local function regCmp()
 	require('cmp').setup({
 		sorting = {
 			comparators = {
-				require('cmp_tabnine.compare'),
+				--require('cmp_tabnine.compare'),
 				compare.offset,
 				compare.exact,
 				compare.score,
@@ -63,8 +77,8 @@ local function regCmp()
 			['<Tab>'] = cmp.mapping(function(fallback)
 				if cmp.visible() then
 					cmp.select_next_item()
-				elseif luasnip.expand_or_jumpable() then
-					luasnip.expand_or_jump()
+					-- elseif luasnip.expand_or_jumpable() then
+					-- 	luasnip.expand_or_jump()
 				elseif has_words_before() then
 					cmp.complete()
 				else
@@ -104,9 +118,9 @@ local function regCmp()
 				name = 'luasnip',
 
 			},
-			{
-				name = 'cmp_tabnine'
-			},
+			-- {
+			-- 	name = 'cmp_tabnine'
+			-- },
 			{
 				name = 'buffer',
 				option = {

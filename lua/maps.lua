@@ -29,10 +29,13 @@ local function map()
 		{ "nmap", "<silent> flj", "<cmd>HopLineAC<cr>" },
 		{ "nmap", "<silent> flm", "<cmd>HopLineMW<cr>" },
 
+		{ "nmap", "<silent> \\ds", "<cmd>LuaSnipUnlinkCurrent<cr>" },
+
 		{ "nmap", "<silent> fcl", "<cmd>HopChar1CurrentLine<cr>" },
 		{ "nmap", "<silent> fcc", "<cmd>HopChar1<cr>" },
 		{ "nmap", "<silent> fcj", "<cmd>HopChar1AC<cr>" },
 		{ "nmap", "<silent> fck", "<cmd>HopChar1BC<cr>" },
+		{ "omap", "<silent> fcl", "<cmd>HopChar1CurrentLine<cr>" },
 
 
 		-- operator movement
@@ -51,3 +54,4 @@ local function map()
 	end
 end
 map()
+

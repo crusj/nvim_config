@@ -1,29 +1,74 @@
-local function load_options()
-	local global_options = {
-		background = "light",
-		termguicolors = true,
-		hidden = true,
-		autowrite = true,
-		ignorecase = true,
-		ts = 4,
-		shiftwidth = 4,
-		mouse = "a",
-		--nu = true,
-		-- rnu = true,
-		cursorline = true,
-		clipboard = "unnamedplus",
-		backspace = "indent,eol,start",
-		-- foldmethod = "indent",
-		signcolumn = "yes",
-		shell = "/bin/bash",
-		guifont = 'GoMono Nerd Font Mono:h16',
-		-- foldmethod = "indent",
-		-- foldcolumn = "auto",
-	}
+-- sets
+local global_options = {
+	background = "light",
+	termguicolors = true,
+	hidden = true,
+	autowrite = true,
+	ignorecase = true,
+	ts = 4,
+	shiftwidth = 4,
+	mouse = "a",
+	nu = true,
+	-- rnu = true,
+	cursorline = true,
+	clipboard = "unnamedplus",
+	backspace = "indent,eol,start",
+	-- foldmethod = "indent",
+	signcolumn = "yes",
+	shell = "/bin/bash",
+	guifont = 'GoMono Nerd Font Mono:h16',
+	-- foldmethod = "indent",
+	-- foldcolumn = "auto",
+}
 
-	for option, value in pairs(global_options) do
-		vim.o[option] = value
-	end
+for option, value in pairs(global_options) do
+	vim.o[option] = value
 end
 
-load_options()
+
+--hl
+vim.api.nvim_create_autocmd("VimEnter", {
+	callback = function()
+	end
+})
+
+-- cmds
+vim.cmd([[
+set nohlsearch
+set splitright
+let g:cursorword_disable_filetypes = ["structrue-go","bookmarks"]
+]])
+
+-- diagnostic
+vim.diagnostic.config({
+	virtual_text = false,
+})
+vim.cmd([[
+	sign define DiagnosticSignError text=🙈 texthl=DiagnosticSignError linehl= numhl=
+	sign define DiagnosticSignWarn text=🙊 texthl=DiagnosticSignWarn linehl= numhl=
+	sign define DiagnosticSignInfo text=🙉 texthl=DiagnosticSignInfo linehl= numhl=
+	sign define DiagnosticSignHint text=🙉 texthl=DiagnosticSignHint linehl= numhl=
+]])
+
+-- neovide
+vim.cmd([[
+let g:neovide_cursor_vfx_mode = "pixiedust"
+let g:neovide_remember_window_size = v:true
+let g:neovide_cursor_vfx_opacity=200.0
+let g:neovide_transparency=1
+]])
+vim.api.nvim_set_keymap("n","<space>dk","<cmd>lua vim.diagnostic.goto_prev()<cr>",{silent=true})
+vim.api.nvim_set_keymap("n","<space>dj","<cmd>lua vim.diagnostic.goto_next()<cr>",{silent=true})
+vim.api.nvim_set_keymap("n","<space>dd","<cmd>lua vim.diagnostic.open_float()<cr>",{silent=true})
+
+-- golang
+-- 为golang当前行生成注释: //
+-- 为golang当前行末尾生成注释: //
+-- 跳转到方法或函数的签名行
+-- 为struct生成方法
+vim.cmd([[
+autocmd FileType go nnoremap <silent> gbc O// 
+autocmd FileType go nnoremap <silent> gac A //  
+autocmd FileType go nnoremap <silent> zf ?^func<cr>zz
+autocmd FileType go nnoremap <silent> gsm ^wv"ryve"+yf{%o<cr>func (*<esc>"+pa) name {<cr>}<esc>kf(a<esc>"rp~i <esc>/name<cr>ce
+]])

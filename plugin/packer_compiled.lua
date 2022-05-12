@@ -131,7 +131,7 @@ _G.packer_plugins = {
     url = "https://github.com/f3fora/cmp-spell"
   },
   ["cmp-tabnine"] = {
-    loaded = true,
+    loaded = false,
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/cmp-tabnine",
     url = "https://github.com/tzachar/cmp-tabnine"
   },

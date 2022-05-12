@@ -22,6 +22,7 @@ let g:nvim_tree_icons = {
     \   'symlink_open': "",
     \   }
     \ }
+let g:nvim_tree_highlight_opened_files = 1
 ]])
 
 require 'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
