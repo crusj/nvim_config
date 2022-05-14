@@ -9,6 +9,14 @@ return require('packer').startup(function()
 
 	-- view
 	use 'kyazdani42/nvim-web-devicons'
+	use {
+		'goolord/alpha-nvim',
+		requires = { 'kyazdani42/nvim-web-devicons' },
+		config = function()
+			require 'alpha'.setup(require 'alpha.themes.startify'.config)
+		end
+	}
+
 
 	-- status
 	use 'kyazdani42/nvim-tree.lua'
@@ -84,15 +92,7 @@ return require('packer').startup(function()
 		branch = "main"
 	}
 	use 'crusj/bookmarks.nvim'
-	use {
-		'rmagatti/auto-session',
-		config = function()
-			require('auto-session').setup {
-				log_level = 'info',
-			}
-		end
-	}
-	use 'rmagatti/session-lens'
+
 	use 'rcarriga/nvim-notify'
 	--use "lukas-reineke/indent-blankline.nvim"
 	use 'simrat39/symbols-outline.nvim'
@@ -101,7 +101,11 @@ return require('packer').startup(function()
 		requires = 'neovim/nvim-lspconfig'
 	}
 	use 'gelguy/wilder.nvim'
-
+	use { 'nvim-orgmode/orgmode', config = function()
+		require('orgmode').setup {}
+	end
+	}
+	use 'Shatur/neovim-session-manager'
 
 
 	-- treesitter
@@ -122,6 +126,7 @@ return require('packer').startup(function()
 	use 'glepnir/oceanic-material'
 	use 'folke/tokyonight.nvim'
 	use 'ishan9299/nvim-solarized-lua'
+	use "EdenEast/nightfox.nvim"
 
 
 	-- git

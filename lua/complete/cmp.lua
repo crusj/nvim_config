@@ -47,11 +47,14 @@ local ELLIPSIS_CHAR = '…'
 local MAX_LABEL_WIDTH = 40
 local MIN_LABEL_WIDTH = 40
 cmp.setup({
+	matching = {
+		disallow_prefix_unmatching = true
+	},
 	experimental = {
-		ghost_text  = true,
+		ghost_text  = false,
 	},
 	window = {
-		completion = cmp.config.window.bordered(),
+			completion = cmp.config.window.bordered(),
 		documentation = cmp.config.window.bordered(),
 	},
 	snippet = {
@@ -113,6 +116,7 @@ cmp.setup({
 
 		},
 		-- {
+		--
 		-- 	name = 'cmp_tabnine'
 		-- },
 		{
@@ -123,6 +127,9 @@ cmp.setup({
 		},
 		{
 			name = 'spell'
+		},
+		{
+			name = 'org'
 		}
 	}),
 	formatting = {
@@ -142,6 +149,9 @@ cmp.setup({
 		})
 	},
 	preselect = cmp.PreselectMode.None,
+	completion = {
+		keyword_length = 2
+	}
 })
 
 -- extension

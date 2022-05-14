@@ -38,3 +38,4 @@ require("hierarchy-tree-go").setup({
 	}
 })
 require('wilder_setup')
+require('org_setup')

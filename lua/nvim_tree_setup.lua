@@ -40,6 +40,7 @@ require 'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
 	view = {
 		width = 30,
 		height = 30,
+		hide_root_folder = true,
 		side = "left",
 		preserve_window_proportions = false,
 		number = false,
@@ -84,12 +85,12 @@ require 'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
 	git = {
 		enable = true,
 		ignore = true,
-		timeout = 400,
+		timeout = 1000,
 	},
 	actions = {
 		change_dir = {
 			enable = true,
-			global = false,
+			global = true,
 		},
 		open_file = {
 			quit_on_open = false,

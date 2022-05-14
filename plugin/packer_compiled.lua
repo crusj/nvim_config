@@ -79,16 +79,16 @@ _G.packer_plugins = {
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/NeoSolarized",
     url = "https://github.com/overcache/NeoSolarized"
   },
+  ["alpha-nvim"] = {
+    config = { "\27LJ\2\n`\0\0\5\0\5\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\0\0'\4\3\0B\2\2\0029\2\4\2B\0\2\1K\0\1\0\vconfig\26alpha.themes.startify\nsetup\nalpha\frequire\0" },
+    loaded = true,
+    path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/alpha-nvim",
+    url = "https://github.com/goolord/alpha-nvim"
+  },
   ["asyncrun.vim"] = {
     loaded = true,
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/asyncrun.vim",
     url = "https://github.com/skywind3000/asyncrun.vim"
-  },
-  ["auto-session"] = {
-    config = { "\27LJ\2\nP\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\14log_level\tinfo\nsetup\17auto-session\frequire\0" },
-    loaded = true,
-    path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/auto-session",
-    url = "https://github.com/rmagatti/auto-session"
   },
   ["bookmarks.nvim"] = {
     loaded = true,
@@ -104,11 +104,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/cmp-buffer",
     url = "https://github.com/hrsh7th/cmp-buffer"
-  },
-  ["cmp-cmdline"] = {
-    loaded = true,
-    path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
-    url = "https://github.com/hrsh7th/cmp-cmdline"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
@@ -131,7 +126,7 @@ _G.packer_plugins = {
     url = "https://github.com/f3fora/cmp-spell"
   },
   ["cmp-tabnine"] = {
-    loaded = false,
+    loaded = true,
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/cmp-tabnine",
     url = "https://github.com/tzachar/cmp-tabnine"
   },
@@ -175,6 +170,11 @@ _G.packer_plugins = {
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/guihua.lua",
     url = "https://github.com/ray-x/guihua.lua"
   },
+  ["hierarchy-tree-go.nvim"] = {
+    loaded = true,
+    path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/hierarchy-tree-go.nvim",
+    url = "https://github.com/crusj/hierarchy-tree-go.nvim"
+  },
   ["hop.nvim"] = {
     config = { "\27LJ\2\nU\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\tkeys\28etovxqpdygfblzhckisuran\nsetup\bhop\frequire\0" },
     loaded = true,
@@ -206,6 +206,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["neovim-session-manager"] = {
+    loaded = true,
+    path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/neovim-session-manager",
+    url = "https://github.com/Shatur/neovim-session-manager"
+  },
+  ["nightfox.nvim"] = {
+    loaded = true,
+    path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
+    url = "https://github.com/EdenEast/nightfox.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -267,6 +277,11 @@ _G.packer_plugins = {
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-notify"] = {
+    loaded = true,
+    path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/nvim-notify",
+    url = "https://github.com/rcarriga/nvim-notify"
+  },
   ["nvim-solarized-lua"] = {
     loaded = true,
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/nvim-solarized-lua",
@@ -302,6 +317,12 @@ _G.packer_plugins = {
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/oceanic-material",
     url = "https://github.com/glepnir/oceanic-material"
   },
+  orgmode = {
+    config = { "\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\forgmode\frequire\0" },
+    loaded = true,
+    path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/orgmode",
+    url = "https://github.com/nvim-orgmode/orgmode"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -331,6 +352,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/structrue-go.nvim",
     url = "https://github.com/crusj/structrue-go.nvim"
+  },
+  ["symbols-outline.nvim"] = {
+    loaded = true,
+    path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim",
+    url = "https://github.com/simrat39/symbols-outline.nvim"
   },
   ["telescope-frecency.nvim"] = {
     loaded = true,
@@ -387,6 +413,11 @@ _G.packer_plugins = {
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/vim-translator",
     url = "https://github.com/voldikss/vim-translator"
   },
+  ["wilder.nvim"] = {
+    loaded = true,
+    path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/wilder.nvim",
+    url = "https://github.com/gelguy/wilder.nvim"
+  },
   ["yode-nvim"] = {
     loaded = true,
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/yode-nvim",
@@ -395,10 +426,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: auto-session
-time([[Config for auto-session]], true)
-try_loadstring("\27LJ\2\nP\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\14log_level\tinfo\nsetup\17auto-session\frequire\0", "config", "auto-session")
-time([[Config for auto-session]], false)
 -- Config for: lualine.nvim
 time([[Config for lualine.nvim]], true)
 try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\21set laststatus=3\bcmd\bvim\0", "config", "lualine.nvim")
@@ -407,6 +434,14 @@ time([[Config for lualine.nvim]], false)
 time([[Config for hop.nvim]], true)
 try_loadstring("\27LJ\2\nU\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\tkeys\28etovxqpdygfblzhckisuran\nsetup\bhop\frequire\0", "config", "hop.nvim")
 time([[Config for hop.nvim]], false)
+-- Config for: orgmode
+time([[Config for orgmode]], true)
+try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\forgmode\frequire\0", "config", "orgmode")
+time([[Config for orgmode]], false)
+-- Config for: alpha-nvim
+time([[Config for alpha-nvim]], true)
+try_loadstring("\27LJ\2\n`\0\0\5\0\5\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\0\0'\4\3\0B\2\2\0029\2\4\2B\0\2\1K\0\1\0\vconfig\26alpha.themes.startify\nsetup\nalpha\frequire\0", "config", "alpha-nvim")
+time([[Config for alpha-nvim]], false)
 if should_profile then save_profiles() end
 
 end)
