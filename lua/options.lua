@@ -25,7 +25,6 @@ for option, value in pairs(global_options) do
 	vim.o[option] = value
 end
 
-
 --hl
 vim.api.nvim_create_autocmd("VimEnter", {
 	callback = function()
@@ -37,6 +36,8 @@ vim.api.nvim_create_autocmd("VimEnter", {
 
 -- cmds
 vim.cmd([[
+set sessionoptions-=blank
+
 set nohlsearch
 set splitright
 let g:cursorword_disable_filetypes = ["structrue-go","bookmarks"]

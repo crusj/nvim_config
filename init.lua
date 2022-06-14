@@ -1,4 +1,4 @@
---require('impatient')
+require('impatient')
 require('options')
 require('plugins')
 require('complete')
@@ -29,8 +29,6 @@ require('dap_setup')
 
 require("strutrue_go_setup")
 require("bookmarks_setup")
---require("indent_blankline_setup")
---
 require("hierarchy-tree-go").setup({
 	keymap = {
 		close = "\\hc" ,
@@ -39,3 +37,8 @@ require("hierarchy-tree-go").setup({
 })
 require('wilder_setup')
 require('org_setup')
+require('wiki_setup')
+require('bank_line_setup')
+
+require("test_setup")
+

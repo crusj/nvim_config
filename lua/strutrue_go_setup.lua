@@ -10,6 +10,7 @@ require"structrue-go".setup({
 	keymap = {
 		toggle = "<space>fh",
 		fold_toggle = "o",
+		center_symbol = "<space>fc",
 		preview_open = "<space>fp"
 
 	}

@@ -17,7 +17,6 @@ return require('packer').startup(function()
 		end
 	}
 
-
 	-- status
 	use 'kyazdani42/nvim-tree.lua'
 	use { 'akinsho/bufferline.nvim', tag = "*", requires = 'kyazdani42/nvim-web-devicons' }
@@ -77,6 +76,7 @@ return require('packer').startup(function()
 			require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
 		end
 	}
+	use 'ggandor/lightspeed.nvim'
 	use 'skywind3000/asyncrun.vim'
 	use 'NTBBloodbath/rest.nvim'
 	use 'lewis6991/impatient.nvim'
@@ -106,6 +106,7 @@ return require('packer').startup(function()
 	end
 	}
 	use 'Shatur/neovim-session-manager'
+	use "lukas-reineke/indent-blankline.nvim"
 
 
 	-- treesitter

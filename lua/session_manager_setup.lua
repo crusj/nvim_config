@@ -10,7 +10,8 @@ require('session_manager').setup({
 		'structure-go',
 		'gitcommit',
 		'NvimTree',
-		'hierarchy-tree-go'
+		'hierarchy-tree-go',
+		'vimwiki'
 	},
 	autosave_only_in_session = false, -- Always autosaves session. If true, only autosaves after a session is active.
 	max_path_length = 80, -- Shorten the display path if length exceeds this threshold. Use 0 if don't want to shorten the path at all.

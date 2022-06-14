@@ -16,6 +16,11 @@ vim.cmd([[
 
     nnoremap <silent> \` :lua require'dapui'.toggle()<CR>
 ]])
-vim.fn.sign_define('DapBreakpoint', {text='🪲', texthl='', linehl='', numhl=''})
-vim.fn.sign_define('DapStopped', {text='⭕', texthl='', linehl='', numhl=''})
+
+vim.cmd([[
+highlight Breakpoint guifg=Red gui=bold
+highlight DebugStop guifg=#0080FF gui=bold
+]])
+vim.fn.sign_define('DapBreakpoint', {text='B', texthl='Breakpoint', linehl='', numhl=''})
+vim.fn.sign_define('DapStopped', {text='->', texthl='DebugStop', linehl='', numhl=''})
 

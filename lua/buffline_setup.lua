@@ -48,7 +48,7 @@ require('bufferline').setup {
 		separator_style = "slant",
 		enforce_regular_tabs = false,
 		always_show_bufferline = false,
-		sort_by = "insert_after_current"
+		sort_by = "insert_after_current",
 	},
 	highlights = {
 		buffer_selected = {
@@ -93,17 +93,22 @@ function CloseBuffer()
 	vim.cmd('bdelete! ' .. bufferToDelete)
 end
 
-vim.cmd([[nnoremap <silent> \x <cmd> lua CloseBuffer()<cr>]])
-vim.cmd([[nnoremap <silent><space>k <cmd>BufferLineCycleNext<CR>]])
-vim.cmd([[nnoremap <silent><space>j :BufferLineCyclePrev<CR>]])
-vim.cmd([[nnoremap <silent>be :BufferLineSortByExtension<CR>]])
-vim.cmd([[nnoremap <silent>bd :BufferLineSortByDirectory<CR>]])
-vim.cmd([[nnoremap <silent><space>1 <Cmd>BufferLineGoToBuffer 1<CR>]])
-vim.cmd([[nnoremap <silent><space>2 <Cmd>BufferLineGoToBuffer 2<CR>]])
-vim.cmd([[nnoremap <silent><space>3 <Cmd>BufferLineGoToBuffer 3<CR>]])
-vim.cmd([[nnoremap <silent><space>4 <Cmd>BufferLineGoToBuffer 4<CR>]])
-vim.cmd([[nnoremap <silent><space>5 <Cmd>BufferLineGoToBuffer 5<CR>]])
-vim.cmd([[nnoremap <silent><space>6 <Cmd>BufferLineGoToBuffer 6<CR>]])
-vim.cmd([[nnoremap <silent><space>7 <Cmd>BufferLineGoToBuffer 7<CR>]])
-vim.cmd([[nnoremap <silent><space>8 <Cmd>BufferLineGoToBuffer 8<CR>]])
-vim.cmd([[nnoremap <silent><space>9 <Cmd>BufferLineGoToBuffer 9<CR>]])
+-- buffer
+vim.cmd([[
+nnoremap <silent> \x <cmd> lua CloseBuffer()<cr>
+nnoremap <silent><space>k <cmd>BufferLineCycleNext<CR>
+nnoremap <silent><space>j :BufferLineCyclePrev<CR>
+]])
+
+-- tab
+vim.cmd([[
+nnoremap <silent><space><Left> <cmd>tabnext<CR>
+nnoremap <silent><space><Right> <cmd>tabprevious<CR>
+]])
+
+-- sort
+vim.cmd([[
+nnoremap <silent>be :BufferLineSortByExtension<CR>
+nnoremap <silent>bd :BufferLineSortByDirectory<CR>
+nnoremap <silent>bp :BufferLinePick<CR>
+]])

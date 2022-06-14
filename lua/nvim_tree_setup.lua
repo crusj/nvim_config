@@ -7,7 +7,7 @@ let g:nvim_tree_icons = {
     \   'staged': "✓",
     \   'unmerged': "",
     \   'renamed': "➜",
-    \   'untracked': "★",
+    \   'untracked': "",
     \   'deleted': "",
     \   'ignored': "◌"
     \   },
@@ -45,7 +45,7 @@ require 'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
 		preserve_window_proportions = false,
 		number = false,
 		relativenumber = false,
-		signcolumn = "no",
+		signcolumn = "yes",
 		mappings = {
 			custom_only = false,
 			list = {

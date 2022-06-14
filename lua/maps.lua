@@ -35,7 +35,11 @@ local function map()
 		{ "nmap", "<silent> fcc", "<cmd>HopChar1<cr>" },
 		{ "nmap", "<silent> fcj", "<cmd>HopChar1AC<cr>" },
 		{ "nmap", "<silent> fck", "<cmd>HopChar1BC<cr>" },
-		{ "omap", "<silent> fcl", "<cmd>HopChar1CurrentLine<cr>" },
+
+		{ "nmap", "<silent> fxl", "<cmd>HopChar2CurrentLine<cr>" },
+		{ "nmap", "<silent> fxx", "<cmd>HopChar2<cr>" },
+		{ "nmap", "<silent> fxj", "<cmd>HopChar2AC<cr>" },
+		{ "nmap", "<silent> fxk", "<cmd>HopChar2BC<cr>" },
 
 
 		-- operator movement
