@@ -13,12 +13,10 @@ local global_options = {
 	cursorline = true,
 	clipboard = "unnamedplus",
 	backspace = "indent,eol,start",
-	-- foldmethod = "indent",
+	foldmethod = "indent",
 	signcolumn = "yes",
 	shell = "/bin/bash",
 	guifont = 'GoMono Nerd Font Mono:h16',
-	-- foldmethod = "indent",
-	-- foldcolumn = "auto",
 }
 
 for option, value in pairs(global_options) do
