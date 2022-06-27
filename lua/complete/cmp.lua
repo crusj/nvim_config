@@ -1,6 +1,10 @@
 local cmp = require('cmp')
 local lspkind = require('lspkind')
 
+-- dad
+vim.cmd([[
+autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })
+]])
 
 require("luasnip.loaders.from_vscode").lazy_load()
 local luasnip = require("luasnip")

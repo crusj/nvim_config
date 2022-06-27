@@ -36,6 +36,7 @@ return require('packer').startup(function()
 	use 'hrsh7th/cmp-nvim-lua'
 	use 'hrsh7th/cmp-buffer'
 	use 'hrsh7th/cmp-path'
+	use 'kristijanhusak/vim-dadbod-completion'
 	-- use 'hrsh7th/cmp-cmdline'
 	use 'f3fora/cmp-spell'
 	use 'saadparwaiz1/cmp_luasnip'
@@ -132,4 +133,8 @@ return require('packer').startup(function()
 	-- git
 	use 'sindrets/diffview.nvim'
 	use 'f-person/git-blame.nvim'
+
+	-- database
+	use 'tpope/vim-dadbod'
+	use 'kristijanhusak/vim-dadbod-ui'
 end)

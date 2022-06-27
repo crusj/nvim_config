@@ -16,7 +16,8 @@ local global_options = {
 	foldmethod = "indent",
 	signcolumn = "yes",
 	shell = "/bin/bash",
-	guifont = 'GoMono Nerd Font Mono:h16',
+	guifont = 'GoMono Nerd Font Mono:h14',
+	expandtab = true,
 }
 
 for option, value in pairs(global_options) do
@@ -41,10 +42,23 @@ set splitright
 let g:cursorword_disable_filetypes = ["structrue-go","bookmarks"]
 ]])
 
+-- augroup
+---- save fold info
+vim.cmd([[
+augroup remember_folds
+  autocmd!
+  set foldlevelstart=99
+  au BufWinLeave *.go mkview 1
+  au BufWinEnter *.go silent! loadview 1
+augroup END
+
+]])
+
 -- diagnostic
 vim.diagnostic.config({
 	virtual_text = false,
 })
+
 vim.cmd([[
 	sign define DiagnosticSignError text=🙈 texthl=DiagnosticSignError linehl= numhl=
 	sign define DiagnosticSignWarn text=🙊 texthl=DiagnosticSignWarn linehl= numhl=

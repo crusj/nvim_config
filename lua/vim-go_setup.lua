@@ -9,6 +9,7 @@ autocmd FileType go nnoremap <silent> gfc <cmd>GoCmt<cr>
 autocmd FileType go nnoremap <silent> gsf <cmd>GoFillStruct<cr>
 autocmd FileType go nnoremap <silent> gst <cmd>GoAddTag<cr>
 autocmd FileType go nnoremap <silent> gfp <cmd>GoFixPlurals<cr>
+autocmd FileType go nnoremap <silent> ge <cmd>GoIfErr<cr>
 ]])
 
 -- Run gofmt + goimport on save

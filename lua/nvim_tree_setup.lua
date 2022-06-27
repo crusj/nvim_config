@@ -1,30 +1,3 @@
-vim.cmd([[
-let g:nvim_tree_icons = {
-    \ 'default': "",
-    \ 'symlink': "",
-    \ 'git': {
-    \   'unstaged': "✗",
-    \   'staged': "✓",
-    \   'unmerged': "",
-    \   'renamed': "➜",
-    \   'untracked': "",
-    \   'deleted': "",
-    \   'ignored': "◌"
-    \   },
-    \ 'folder': {
-    \   'arrow_open': "",
-    \   'arrow_closed': "",
-    \   'default': "",
-    \   'open': "",
-    \   'empty': "",
-    \   'empty_open': "",
-    \   'symlink': "",
-    \   'symlink_open': "",
-    \   }
-    \ }
-let g:nvim_tree_highlight_opened_files = 1
-]])
-
 require 'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
 	auto_reload_on_write = true,
 	disable_netrw = false,
@@ -50,6 +23,7 @@ require 'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
 			custom_only = false,
 			list = {
 				{ key = "<Tab>", action = "" },
+				{ key = "f", action = "" },
 			}
 		},
 	},

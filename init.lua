@@ -39,6 +39,5 @@ require('wilder_setup')
 require('org_setup')
 require('wiki_setup')
 require('bank_line_setup')
-
 require("test_setup")
-
+require("db_setup")
