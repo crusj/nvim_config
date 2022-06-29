@@ -28,6 +28,7 @@ lualine.setup({
             },
             {
                 gps.get_location,
+
                 cond = gps.is_available
             },
         },
