@@ -42,4 +42,3 @@ require('bank_line_setup')
 require("test_setup")
 require("db_setup")
 
-require("color-picker").setup()
