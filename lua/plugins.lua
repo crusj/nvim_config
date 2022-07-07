@@ -93,15 +93,8 @@ return require('packer').startup(function()
         branch = "main"
     }
     use 'crusj/bookmarks.nvim'
-    use {
-        "ziontee113/color-picker.nvim",
-        config = function()
-            require("color-picker").setup()
-        end
-    }
 
     use 'rcarriga/nvim-notify'
-    --use "lukas-reineke/indent-blankline.nvim"
     use 'simrat39/symbols-outline.nvim'
     use {
         'crusj/hierarchy-tree-go.nvim',
@@ -114,6 +107,11 @@ return require('packer').startup(function()
     }
     use 'Shatur/neovim-session-manager'
     use "lukas-reineke/indent-blankline.nvim"
+    use({ "ziontee113/color-picker.nvim",
+        config = function()
+            require("color-picker")
+        end,
+    })
 
     -- treesitter
     use 'SmiteshP/nvim-gps'
