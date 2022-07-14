@@ -1,6 +1,6 @@
 -- translate plugin
 vim.cmd([[
-	let g:translator_default_engines = ['google']
+	let g:translator_default_engines = ['youdao']
 	nmap <silent> <Leader>w <Plug>TranslateW
 	vmap <silent> <Leader>w <Plug>TranslateWV
 ]])

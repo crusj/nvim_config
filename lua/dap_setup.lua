@@ -19,9 +19,7 @@ vim.cmd("hi  DapUIBreakpointsDisabledLine guifg=#424242")
 require('dap-go').setup()
 
 require("dapui").setup({
-    mappings = {
-        expand = { "o" },
-    },
+    mappings = {},
     layouts = {
         {
             elements = {
@@ -36,6 +34,7 @@ require("dapui").setup({
         },
     }
 })
+
 require("nvim-dap-virtual-text").setup()
 vim.cmd([[
     nnoremap <silent> \1 :lua require'dap'.toggle_breakpoint()<CR>
