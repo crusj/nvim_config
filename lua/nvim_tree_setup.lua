@@ -68,7 +68,7 @@ require 'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
 		},
 		open_file = {
 			quit_on_open = false,
-			resize_window = true,
+			resize_window = false,
 			window_picker = {
 				enable = true,
 				chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
@@ -96,7 +96,7 @@ require 'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
 	},
 } -- END_DEFAULT_OPTS
 
-vim.cmd([[nnoremap <silent> <space>n :NvimTreeToggle<CR>]])
-vim.cmd([[nnoremap <silent> <space>r :NvimTreeRefresh<CR>]])
-vim.cmd([[nnoremap <silent> <space>ff :NvimTreeFindFile<CR>]])
-vim.cmd([[autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif]])
+-- vim.cmd([[nnoremap <silent> <space>n :NvimTreeToggle<CR>]])
+-- vim.cmd([[nnoremap <silent> <space>r :NvimTreeRefresh<CR>]])
+-- vim.cmd([[nnoremap <silent> <space>ff :NvimTreeFindFile<CR>]])
+-- vim.cmd([[autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif]])

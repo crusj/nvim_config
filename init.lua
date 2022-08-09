@@ -3,7 +3,7 @@ require('options')
 require('plugins')
 require('complete')
 
-require('nvim_tree_setup')
+-- require('nvim_tree_setup')
 require('telescope_setup')
 require('session_manager_setup')
 require('buffline_setup')
@@ -42,5 +42,4 @@ require('bank_line_setup')
 require("test_setup")
 require("db_setup")
 require("color_picker_setup")
-
-
+require('tree_setup')

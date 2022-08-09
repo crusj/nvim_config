@@ -6,7 +6,7 @@ local function map()
 		{ "nmap", "<space>ft", "<cmd>Vista!!<cr>" },
 		{ "nmap", "<silent> <space>h", "<c-w>h" },
 		{ "nmap", "<silent> <space>l", "<c-w>l" },
-		{ "nmap", "<silent> <leader>t", "<cmd>GoTestFunc<cr>" },
+		{ "nmap", "<silent> <leader>t", "<cmd>TestNearest<cr>" },
 		{ "nmap", "<silent> <leader>e", "<cmd>b#<cr>" },
 		{ "nmap", "<silent> gff", "<cmd>lua vim.lsp.buf.formatting()<cr>" },
 		{ "nmap", "<silent> gt", "<cmd>GoAddTest<cr>" },

@@ -61,10 +61,14 @@ vim.diagnostic.config({
 
 vim.cmd([[
 	sign define DiagnosticSignError text=⫸ texthl=DiagnosticSignError linehl= numhl=
-	sign define DiagnosticSignWarn text=🙊 texthl=DiagnosticSignWarn linehl= numhl=
-	sign define DiagnosticSignInfo text=🙉 texthl=DiagnosticSignInfo linehl= numhl=
-	sign define DiagnosticSignHint text=🙉 texthl=DiagnosticSignHint linehl= numhl=
 ]])
+
+vim.fn.sign_define("DiagnosticSignWarn",
+    { text = " ", texthl = "DiagnosticSignWarn" })
+vim.fn.sign_define("DiagnosticSignInfo",
+    { text = " ", texthl = "DiagnosticSignInfo" })
+vim.fn.sign_define("DiagnosticSignHint",
+    { text = "", texthl = "DiagnosticSignHint" })
 
 -- neovide
 vim.cmd([[
