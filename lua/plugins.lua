@@ -87,7 +87,6 @@ return require('packer').startup(function()
             require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
         end
     }
-    use 'ggandor/lightspeed.nvim'
     use 'skywind3000/asyncrun.vim'
     use 'NTBBloodbath/rest.nvim'
     use 'lewis6991/impatient.nvim'
@@ -126,6 +125,7 @@ return require('packer').startup(function()
     -- treesitter
     use 'SmiteshP/nvim-gps'
     use 'p00f/nvim-ts-rainbow'
+    use 'drybalka/tree-climber.nvim'
 
     -- test and debug
     use 'vim-test/vim-test'
