@@ -12,8 +12,9 @@ local function custom_attach(client, bufnr)
 		hint_enable                    = true,
 		floating_window_above_cur_line = true,
 		floating_window_off_x          = 1, -- adjust float windows x position.
-		floating_window_off_y          = 1
-
+		floating_window_off_y          = 1,
+        max_width = 200,
+	
 	}, bufnr)
 end
 

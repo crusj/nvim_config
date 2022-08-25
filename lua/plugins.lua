@@ -71,6 +71,7 @@ return require('packer').startup(function()
     use { "tami5/sqlite.lua" }
     use 'nvim-telescope/telescope-frecency.nvim'
 
+
     -- tools
     use 'hoschi/yode-nvim'
     use 'voldikss/vim-floaterm'
@@ -102,6 +103,7 @@ return require('packer').startup(function()
         branch = "main"
     }
     use 'crusj/bookmarks.nvim'
+    use 'hrsh7th/cmp-nvim-lsp-signature-help'
 
     use 'rcarriga/nvim-notify'
     use 'simrat39/symbols-outline.nvim'
@@ -121,6 +123,8 @@ return require('packer').startup(function()
             require("color-picker")
         end,
     })
+    use "tversteeg/registers.nvim"
+    use 'chentoast/marks.nvim'
 
     -- treesitter
     use 'SmiteshP/nvim-gps'
@@ -147,6 +151,7 @@ return require('packer').startup(function()
     -- git
     use 'sindrets/diffview.nvim'
     use 'f-person/git-blame.nvim'
+    use { 'akinsho/git-conflict.nvim', tag = "*" }
 
     -- database
     use 'tpope/vim-dadbod'

@@ -44,3 +44,7 @@ require("db_setup")
 require("color_picker_setup")
 require('tree_setup')
 require("climb_setup")
+require("registers_setup")
+require("marks_setup")
+
+require("git_conflict_setup")

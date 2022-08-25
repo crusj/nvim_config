@@ -14,8 +14,7 @@ luasnip.config.set_config({
 		[types.snippet] = {
 			active = {
 				virt_text = { { '🌈' } },
-				hl_mode = "combine"
-			},
+				hl_mode = "combine" },
 		}
 	}
 })
@@ -109,6 +108,9 @@ cmp.setup({
 		end,
 	},
 	sources = cmp.config.sources({
+        -- {
+        --    name = 'nvim_lsp_signature_help', 
+        -- },
 		{
 			name = 'nvim_lsp',
 		},
