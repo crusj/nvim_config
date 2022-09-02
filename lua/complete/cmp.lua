@@ -134,9 +134,6 @@ cmp.setup({
 		{
 			name = 'spell'
 		},
-		{
-			name = 'org'
-		}
 	}),
 	formatting = {
 		format = lspkind.cmp_format({

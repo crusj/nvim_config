@@ -112,10 +112,6 @@ return require('packer').startup(function()
         requires = 'neovim/nvim-lspconfig'
     }
     use 'gelguy/wilder.nvim'
-    use { 'nvim-orgmode/orgmode', config = function()
-        require('orgmode').setup {}
-    end
-    }
     use 'Shatur/neovim-session-manager'
     use "lukas-reineke/indent-blankline.nvim"
     use({ "ziontee113/color-picker.nvim",
