@@ -152,4 +152,5 @@ return require('packer').startup(function()
     -- database
     use 'tpope/vim-dadbod'
     use 'kristijanhusak/vim-dadbod-ui'
+    use 'RishabhRD/popfix'
 end)
