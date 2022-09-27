@@ -104,7 +104,6 @@ return require('packer').startup(function()
     }
     use 'crusj/bookmarks.nvim'
     use 'hrsh7th/cmp-nvim-lsp-signature-help'
-
     use 'rcarriga/nvim-notify'
     use 'simrat39/symbols-outline.nvim'
     use {
