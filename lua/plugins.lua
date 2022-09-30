@@ -7,36 +7,40 @@ return require('packer').startup(function()
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
-    -- view
+    -- lua `fork` of vim-web-devicons for neovim
     use 'kyazdani42/nvim-web-devicons'
+    -- complete; entire; absolute; unqualified. All the lua functions I don't want to write twice.
+    use 'nvim-lua/plenary.nvim'
+    -- alpha is a fast and fully programmable greeter for neovim.
     use {
         'goolord/alpha-nvim',
-        requires = { 'kyazdani42/nvim-web-devicons' },
         config = function()
             require 'alpha'.setup(require 'alpha.themes.startify'.config)
         end
     }
+    use 'Shatur/neovim-session-manager'
 
-    -- status
+    -- Neovim plugin to manage the file system and other tree like structures.
     use {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
         requires = {
-            "nvim-lua/plenary.nvim",
-            "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
             "MunifTanjim/nui.nvim",
             's1n7ax/nvim-window-picker'
         }
     }
-    -- use 'kyazdani42/nvim-tree.lua'
+
+    -- A snazzy bufferline for Neovim
     use { 'akinsho/bufferline.nvim', tag = "*", requires = 'kyazdani42/nvim-web-devicons' }
+    -- A blazing fast and easy to configure Neovim statusline written in Lua.
     use {
         'nvim-lualine/lualine.nvim',
         config = function()
             vim.cmd([[set laststatus=3]])
         end
     }
-    use 'nvim-lua/plenary.nvim'
+
+    -- Standalone UI for nvim-lsp progress. Eye candy for the impatient.
     use 'j-hui/fidget.nvim'
 
     -- complete
@@ -46,8 +50,6 @@ return require('packer').startup(function()
     use 'hrsh7th/cmp-nvim-lua'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
-    use 'kristijanhusak/vim-dadbod-completion'
-    -- use 'hrsh7th/cmp-cmdline'
     use 'f3fora/cmp-spell'
     use 'saadparwaiz1/cmp_luasnip'
     use 'L3MON4D3/LuaSnip'
@@ -56,13 +58,16 @@ return require('packer').startup(function()
     use 'mfussenegger/nvim-lint'
     use 'ray-x/lsp_signature.nvim'
     use 'ray-x/go.nvim'
-    use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
+    -- use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
 
     -- search
     use 'nvim-telescope/telescope.nvim'
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use { 'nvim-telescope/telescope-ui-select.nvim' }
+
+    -- The goal of nvim-bqf is to make Neovim's quickfix window better.
     use { 'kevinhwang91/nvim-bqf' }
+
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use { 'junegunn/fzf', run = function()
         vim.fn['fzf#install']()
@@ -71,10 +76,8 @@ return require('packer').startup(function()
     use { "tami5/sqlite.lua" }
     use 'nvim-telescope/telescope-frecency.nvim'
 
-
     -- tools
     use 'hoschi/yode-nvim'
-    use 'voldikss/vim-floaterm'
     use 'windwp/nvim-autopairs'
     use 'xiyaowong/nvim-cursorword'
     use 'AndrewRadev/splitjoin.vim'
@@ -91,6 +94,8 @@ return require('packer').startup(function()
     use 'skywind3000/asyncrun.vim'
     use 'NTBBloodbath/rest.nvim'
     use 'lewis6991/impatient.nvim'
+
+   --  A search panel for neovim.
     use 'windwp/nvim-spectre'
     use 'voldikss/vim-translator'
     use { "akinsho/toggleterm.nvim" }
@@ -98,6 +103,7 @@ return require('packer').startup(function()
         'ray-x/guihua.lua',
         run = 'cd lua/fzy && make'
     }
+
     use {
         'crusj/structrue-go.nvim',
         branch = "main"
@@ -105,13 +111,12 @@ return require('packer').startup(function()
     use 'crusj/bookmarks.nvim'
     use 'hrsh7th/cmp-nvim-lsp-signature-help'
     use 'rcarriga/nvim-notify'
-    use 'simrat39/symbols-outline.nvim'
     use {
         'crusj/hierarchy-tree-go.nvim',
         requires = 'neovim/nvim-lspconfig'
     }
+    -- A more adventurous wildmenu
     use 'gelguy/wilder.nvim'
-    use 'Shatur/neovim-session-manager'
     use "lukas-reineke/indent-blankline.nvim"
     use({ "ziontee113/color-picker.nvim",
         config = function()
@@ -134,22 +139,12 @@ return require('packer').startup(function()
     use 'theHamsta/nvim-dap-virtual-text'
 
     -- colorscheme
-    use 'rakr/vim-one'
     use 'overcache/NeoSolarized'
-    use 'rebelot/kanagawa.nvim'
-    use 'glepnir/oceanic-material'
-    use 'folke/tokyonight.nvim'
     use 'ishan9299/nvim-solarized-lua'
-    use "EdenEast/nightfox.nvim"
 
 
     -- git
     use 'sindrets/diffview.nvim'
-    use 'f-person/git-blame.nvim'
     use { 'akinsho/git-conflict.nvim', tag = "*" }
-
-    -- database
-    use 'tpope/vim-dadbod'
-    use 'kristijanhusak/vim-dadbod-ui'
-    use 'RishabhRD/popfix'
+    use 'lewis6991/gitsigns.nvim'
 end)

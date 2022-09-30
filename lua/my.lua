@@ -99,4 +99,9 @@ function my.copy_last_git_msg()
     })
 end
 
+function my.close_others_buff()
+    vim.cmd("BufferLineCloseRight")
+    vim.cmd("BufferLineCloseLeft")
+end
+
 return my

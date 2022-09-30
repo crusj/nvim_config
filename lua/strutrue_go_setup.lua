@@ -13,26 +13,26 @@ require "structrue-go".setup({
         },
         import = {
             hl = "guifg=#E4475",
-            icon = "{} "
+            icon = " ◈ "
         },
         const = {
             hl = "guifg=#E44755",
-            icon = "π ",
+            icon = " π ",
         },
         variable = {
             hl = "guifg=#52A5A2",
-            icon = "◈ ",
+            icon = " ◈ ",
         },
         func = {
-            hl = "guifg=#CEB996",
-            icon = " ",
+            hl = "guifg=#7E7BE1",
+            icon = "  ",
         },
         interface = {
             hl = "guifg=#00B4D8",
             icon = "❙ "
         },
         type = {
-            hl = "guifg=Red",
+            hl = "guifg=#E15093",
             icon = "▱ ",
         },
         struct = {
@@ -40,16 +40,16 @@ require "structrue-go".setup({
             icon = "❏ ",
         },
         field = {
-            hl = "guifg=#CEB996",
-            icon = "▪ "
+            hl = "guifg=#919191",
+            icon = " ▪ "
         },
         method_current = {
-            hl = "guifg=Blue",
-            icon = "ƒ "
+            hl = "guifg=#4EA7F9",
+            icon = " ƒ "
         },
         method_others = {
             hl = "guifg=#CEB996",
-            icon = " "
+            icon = "  "
         },
     },
     keymap = {
