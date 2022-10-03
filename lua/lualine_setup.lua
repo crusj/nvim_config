@@ -9,6 +9,7 @@ lualine.setup({
         disabled_filetypes = {},
         section_separators = { left = '', right = '' },
     },
+    globalstatus = true,
     sections = {
         lualine_a = {
             {
@@ -20,15 +21,15 @@ lualine.setup({
         lualine_c = {
             {
                 helper.get_root_path,
-                color = { fg = '#287BC9'},
-                icon = {'📦'}
+                color = { fg = '#287BC9' },
+                icon = { '📦' }
 
             },
             {
                 'filename',
                 path = 1,
-                color = {fg = '#2D9799'},
-                icon = {'📜'}
+                color = { fg = '#2D9799' },
+                icon = { '📜' }
             },
             {
                 gps.get_location,
@@ -43,7 +44,7 @@ lualine.setup({
             },
 
             {
-                icon = {"⏰"},
+                icon = { "⏰" },
                 helper.get_time_str,
             },
         },

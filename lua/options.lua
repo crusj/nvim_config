@@ -18,6 +18,7 @@ local global_options = {
 	shell = "/bin/bash",
 	guifont = 'GoMono Nerd Font Mono:h14',
 	expandtab = true,
+    laststatus = 3,
 }
 
 for option, value in pairs(global_options) do

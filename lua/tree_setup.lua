@@ -17,6 +17,11 @@ require 'window-picker'.setup({
 -- Unless you are still migrating, remove the deprecated commands from v1.x
 vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
+vim.cmd([[
+    highlight NeoTreeGitDeleted cterm=bold ctermfg=203 ctermbg=230 gui=bold guifg=#dc322f guibg=normal guisp=none
+    highlight NeoTreeGitAdded  ctermfg=142 ctermbg=230 guifg=#859900 guibg=normal guisp=#859900
+]])
+
 -- NOTE: this is changed from v1.x, which used the old style of highlight groups
 -- in the form "LspDiagnosticsSignWarning"
 

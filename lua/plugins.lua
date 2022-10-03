@@ -11,13 +11,7 @@ return require('packer').startup(function()
     use 'kyazdani42/nvim-web-devicons'
     -- complete; entire; absolute; unqualified. All the lua functions I don't want to write twice.
     use 'nvim-lua/plenary.nvim'
-    -- alpha is a fast and fully programmable greeter for neovim.
-    use {
-        'goolord/alpha-nvim',
-        config = function()
-            require 'alpha'.setup(require 'alpha.themes.startify'.config)
-        end
-    }
+    use 'mhinz/vim-startify'
     use 'Shatur/neovim-session-manager'
 
     -- Neovim plugin to manage the file system and other tree like structures.
@@ -29,15 +23,16 @@ return require('packer').startup(function()
             's1n7ax/nvim-window-picker'
         }
     }
+    use {
+        'kyazdani42/nvim-tree.lua',
+        tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    }
 
     -- A snazzy bufferline for Neovim
     use { 'akinsho/bufferline.nvim', tag = "*", requires = 'kyazdani42/nvim-web-devicons' }
     -- A blazing fast and easy to configure Neovim statusline written in Lua.
     use {
         'nvim-lualine/lualine.nvim',
-        config = function()
-            vim.cmd([[set laststatus=3]])
-        end
     }
 
     -- Standalone UI for nvim-lsp progress. Eye candy for the impatient.
@@ -65,9 +60,6 @@ return require('packer').startup(function()
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use { 'nvim-telescope/telescope-ui-select.nvim' }
 
-    -- The goal of nvim-bqf is to make Neovim's quickfix window better.
-    use { 'kevinhwang91/nvim-bqf' }
-
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use { 'junegunn/fzf', run = function()
         vim.fn['fzf#install']()
@@ -77,7 +69,6 @@ return require('packer').startup(function()
     use 'nvim-telescope/telescope-frecency.nvim'
 
     -- tools
-    use 'hoschi/yode-nvim'
     use 'windwp/nvim-autopairs'
     use 'xiyaowong/nvim-cursorword'
     use 'AndrewRadev/splitjoin.vim'
@@ -94,8 +85,13 @@ return require('packer').startup(function()
     use 'skywind3000/asyncrun.vim'
     use 'NTBBloodbath/rest.nvim'
     use 'lewis6991/impatient.nvim'
+    use {
+        'ggandor/lightspeed.nvim',
+        requires = "tpope/vim-repeat",
 
-   --  A search panel for neovim.
+    } -- Lightspeed is a motion plugin for Neovim.
+
+    --  A search panel for neovim.
     use 'windwp/nvim-spectre'
     use 'voldikss/vim-translator'
     use { "akinsho/toggleterm.nvim" }
@@ -123,7 +119,6 @@ return require('packer').startup(function()
             require("color-picker")
         end,
     })
-    use "tversteeg/registers.nvim"
     use 'chentoast/marks.nvim'
 
     -- treesitter
