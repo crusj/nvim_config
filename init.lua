@@ -1,4 +1,4 @@
---require('impatient')
+require('impatient')
 require('options')
 require('plugins')
 require('complete')
@@ -42,3 +42,6 @@ require("marks_setup")
 
 require("git_conflict_setup")
 require("gitsigns_setup")
+
+require("smooth_setup")
+require("scroll_setup")

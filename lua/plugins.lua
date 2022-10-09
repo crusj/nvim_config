@@ -99,7 +99,7 @@ return require('packer').startup(function()
         'ray-x/guihua.lua',
         run = 'cd lua/fzy && make'
     }
-
+    use 'voldikss/vim-floaterm'
     use {
         'crusj/structrue-go.nvim',
         branch = "main"
@@ -120,6 +120,10 @@ return require('packer').startup(function()
         end,
     })
     use 'chentoast/marks.nvim'
+    -- a smooth scrolling neovim plugin written in lua.
+    use 'karb94/neoscroll.nvim'
+    --nvim-scrollview is a Neovim plugin that displays interactive vertical scrollbars.
+    use 'dstein64/nvim-scrollview'
 
     -- treesitter
     use 'SmiteshP/nvim-gps'
