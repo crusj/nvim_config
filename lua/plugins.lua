@@ -93,7 +93,6 @@ return require('packer').startup(function()
 
     --  A search panel for neovim.
     use 'windwp/nvim-spectre'
-    use 'voldikss/vim-translator'
     use { "akinsho/toggleterm.nvim" }
     use {
         'ray-x/guihua.lua',
@@ -122,8 +121,6 @@ return require('packer').startup(function()
     use 'chentoast/marks.nvim'
     -- a smooth scrolling neovim plugin written in lua.
     use 'karb94/neoscroll.nvim'
-    --nvim-scrollview is a Neovim plugin that displays interactive vertical scrollbars.
-    use 'dstein64/nvim-scrollview'
 
     -- treesitter
     use 'SmiteshP/nvim-gps'
@@ -141,8 +138,8 @@ return require('packer').startup(function()
     use 'overcache/NeoSolarized'
     use 'ishan9299/nvim-solarized-lua'
 
-
-    -- git
+    use 'wfxr/minimap.vim'
+-- git
     use 'sindrets/diffview.nvim'
     use { 'akinsho/git-conflict.nvim', tag = "*" }
     use 'lewis6991/gitsigns.nvim'
