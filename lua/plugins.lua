@@ -140,6 +140,7 @@ return require('packer').startup(function()
     -- colorscheme
     use 'overcache/NeoSolarized'
     use 'ishan9299/nvim-solarized-lua'
+    use '4513ECHO/vim-colors-hatsunemiku'
 
 
     -- git
