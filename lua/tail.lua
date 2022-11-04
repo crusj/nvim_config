@@ -1,3 +1,3 @@
 vim.cmd([[
-highlight CursorLine guibg=#F1ECD8
+highlight CursorLine guibg=#F1ECDB
 ]])
