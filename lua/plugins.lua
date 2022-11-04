@@ -121,6 +121,8 @@ return require('packer').startup(function()
     use 'chentoast/marks.nvim'
     -- a smooth scrolling neovim plugin written in lua.
     use 'karb94/neoscroll.nvim'
+    use { 'echasnovski/mini.nvim', branch = 'main' }
+
 
     -- treesitter
     use 'SmiteshP/nvim-gps'
@@ -139,7 +141,6 @@ return require('packer').startup(function()
     use 'ishan9299/nvim-solarized-lua'
     use '4513ECHO/vim-colors-hatsunemiku'
 
-    use 'wfxr/minimap.vim'
 -- git
     use 'sindrets/diffview.nvim'
     use { 'akinsho/git-conflict.nvim', tag = "*" }

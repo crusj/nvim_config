@@ -45,3 +45,5 @@ require("gitsigns_setup")
 
 require("smooth_setup")
 require("scroll_setup")
+
+require("minimap_setup")

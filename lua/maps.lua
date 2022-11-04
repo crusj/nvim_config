@@ -14,6 +14,7 @@ local function map()
 		{ "nmap", "<silent> <space>fs", "<cmd>lua vim.lsp.buf.signature_help()<CR>" },
 		{ "nmap", "<silent> gr", "<cmd>lua vim.lsp.buf.rename()<cr>" },
 		{ "nmap", "<silent> <leader>do", "<cmd>DiffviewOpen<cr>" },
+		{ "nmap", "<silent> <leader>d1", "<cmd>DiffviewOpen HEAD~1<cr>" },
 		{ "nmap", "<silent> <leader>dc", "<cmd>DiffviewClose<cr>" },
 		{ "nmap", "<silent> <leader>dh", "<cmd>DiffviewFileHistory<cr>" },
 		{ "nmap", "<silent> <leader><leader>", "<cmd>Telescope frecency<cr>" },
