@@ -47,5 +47,6 @@ require("smooth_setup")
 require("scroll_setup")
 
 require("minimap_setup")
+require("mind_setup")
 
 require("tail")

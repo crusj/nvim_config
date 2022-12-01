@@ -90,6 +90,11 @@ return require('packer').startup(function()
         requires = "tpope/vim-repeat",
 
     } -- Lightspeed is a motion plugin for Neovim.
+    use {
+        'phaazon/mind.nvim',
+        branch = 'v2.2',
+        requires = { 'nvim-lua/plenary.nvim' },
+    }
 
     --  A search panel for neovim.
     use 'windwp/nvim-spectre'
@@ -141,7 +146,7 @@ return require('packer').startup(function()
     use 'ishan9299/nvim-solarized-lua'
     use '4513ECHO/vim-colors-hatsunemiku'
 
--- git
+    -- git
     use 'sindrets/diffview.nvim'
     use { 'akinsho/git-conflict.nvim', tag = "*" }
     use 'lewis6991/gitsigns.nvim'

@@ -63,3 +63,12 @@ lspconfig['sumneko_lua'].setup {
         },
     },
 }
+
+lspconfig["phpactor"].setup {
+    capabilities = capabilities,
+    on_attach = custom_attach,
+    init_options = {
+        ["language_server_phpstan.enabled"] = false,
+        ["language_server_psalm.enabled"] = false,
+    }
+}

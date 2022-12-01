@@ -5,8 +5,6 @@ local global_options = {
 	hidden = true,
 	autowrite = true,
 	ignorecase = true,
-	ts = 4,
-	shiftwidth = 4,
 	mouse = "a",
 	nu = true,
 	-- rnu = true,
@@ -37,10 +35,13 @@ vim.api.nvim_create_autocmd("VimEnter", {
 -- cmds
 vim.cmd([[
 set sessionoptions-=blank
-
 set nohlsearch
 set splitright
 let g:cursorword_disable_filetypes = ["structrue-go","bookmarks"]
+
+set tabstop=4
+set shiftwidth=4
+set expandtab
 ]])
 
 -- augroup
