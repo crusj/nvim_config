@@ -8,7 +8,7 @@ local function map()
 		{ "nmap", "<silent> <space>l", "<c-w>l" },
 		{ "nmap", "<silent> <leader>t", "<cmd>TestNearest -v<cr>" },
 		{ "nmap", "<silent> <leader>e", "<cmd>b#<cr>" },
-		{ "nmap", "<silent> gff", "<cmd>lua vim.lsp.buf.formatting()<cr>" },
+		{ "nmap", "<silent> gff", "<cmd>lua vim.lsp.buf.format({async = true})<cr>" },
 		{ "nmap", "<silent> gt", "<cmd>GoAddTest<cr>" },
 		{ "nmap", "<silent> <space>fd", "<cmd>lua vim.lsp.buf.hover()<CR>" },
 		{ "nmap", "<silent> <space>fs", "<cmd>lua vim.lsp.buf.signature_help()<CR>" },
