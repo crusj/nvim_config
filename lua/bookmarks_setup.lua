@@ -5,6 +5,6 @@ require("bookmarks").setup({
 	},
 	width = 0.9,
     height = 0.8,
-    fix_enable = true,
+    fix_enable = false,
     preview_ext_enable = false,
 })

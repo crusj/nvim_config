@@ -48,5 +48,6 @@ require("scroll_setup")
 
 require("minimap_setup")
 require("mind_setup")
+require("tabnine_setup")
 
 require("tail")

@@ -15,6 +15,7 @@ require 'mind'.setup {
             { " ", "Internet, Earth, everyone!" },
             { " ", "Frozen, on-hold" },
             { "", "Delete" },
+            {" ", "Unfinished"}
         }
     }
 

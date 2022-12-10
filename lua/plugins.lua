@@ -53,7 +53,9 @@ return require('packer').startup(function()
     use 'mfussenegger/nvim-lint'
     use 'ray-x/lsp_signature.nvim'
     use 'ray-x/go.nvim'
-    -- use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
+    use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
+    use { 'codota/tabnine-nvim', run = './dl_binaries.sh' }
+
 
     -- search
     use 'nvim-telescope/telescope.nvim'
