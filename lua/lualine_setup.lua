@@ -4,7 +4,7 @@ local gps = require("nvim-gps")
 
 lualine.setup({
     options = {
-        theme = 'solarized_light',
+        theme = 'auto',
         component_separators = {},
         disabled_filetypes = {},
         section_separators = { left = '', right = '' },
@@ -21,21 +21,24 @@ lualine.setup({
         lualine_c = {
             {
                 helper.get_root_path,
-                color = { fg = '#287BC9' },
+                -- color = { fg = '#287BC9' },
+                color = { fg = 'red' },
                 icon = { '📦' }
 
             },
             {
                 'filename',
                 path = 1,
-                color = { fg = '#2D9799' },
+                -- color = { fg = '#2D9799' },
+                color = { fg = '#FEDE5B' },
                 icon = { '📜' }
             },
             {
                 gps.get_location,
 
                 cond = gps.is_available,
-                color = { fg = '#ffaa88', gui = 'italic,bold' }
+                --color = { fg = '#ffaa88', gui = 'italic,bold' }
+                color = { fg = 'white', gui = 'italic,bold' }
             },
         },
         lualine_z = {

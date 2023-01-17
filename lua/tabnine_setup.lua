@@ -1,11 +1,3 @@
--- online
-require('tabnine').setup({
-  disable_auto_comment=true,
-  accept_keymap="<Tab>",
-  debounce_ms = 500,
-  suggestion_color = {gui = "#808080", cterm = 244}
-})
-
 local tcf = require('cmp_tabnine.config')
 tcf:setup({
 	max_lines = 1000,

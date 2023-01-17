@@ -29,7 +29,7 @@ return require('packer').startup(function()
     }
 
     -- A snazzy bufferline for Neovim
-    use { 'akinsho/bufferline.nvim', tag = "*", requires = 'kyazdani42/nvim-web-devicons' }
+    use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'kyazdani42/nvim-web-devicons' }
     -- A blazing fast and easy to configure Neovim statusline written in Lua.
     use {
         'nvim-lualine/lualine.nvim',
@@ -37,6 +37,8 @@ return require('packer').startup(function()
 
     -- Standalone UI for nvim-lsp progress. Eye candy for the impatient.
     use 'j-hui/fidget.nvim'
+    -- Vim plugin for automatically highlighting other uses of the word under the cursor using either LSP, Tree-sitter, or regex matching.
+    use 'RRethy/vim-illuminate'
 
     -- complete
     use 'neovim/nvim-lspconfig'
@@ -54,7 +56,6 @@ return require('packer').startup(function()
     use 'ray-x/lsp_signature.nvim'
     use 'ray-x/go.nvim'
     use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
-    use { 'codota/tabnine-nvim', run = './dl_binaries.sh' }
 
 
     -- search
