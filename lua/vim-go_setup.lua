@@ -1,5 +1,6 @@
 require('go').setup{
-	run_in_floaterm = true
+	run_in_floaterm = true,
+    goimport='goimports' -- gopls
 }
 
 -- 为函数或方法生成注释

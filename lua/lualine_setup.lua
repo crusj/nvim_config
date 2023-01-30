@@ -22,7 +22,7 @@ lualine.setup({
             {
                 helper.get_root_path,
                 -- color = { fg = '#287BC9' },
-                color = { fg = 'red' },
+                color = { fg = 'black' },
                 icon = { '📦' }
 
             },
