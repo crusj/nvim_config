@@ -3,7 +3,15 @@ require("toggleterm").setup{
 	direction =  'float',
 	open_mapping = [[\a]],
 	float_opts = {
-		border = 'double',
+		border = 'curved',
+        windblend = 3,
 	},
-	shell = 'fish'
+    hide_numbers = false,
+	shell = 'fish',
+    auto_scroll = false,
+    highlights = {
+        FloatBorder = {
+            guifg = "red",
+        },
+    }
 }
