@@ -251,11 +251,6 @@ _G.packer_plugins = {
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/neoscroll.nvim",
     url = "https://github.com/karb94/neoscroll.nvim"
   },
-  ["neovim-session-manager"] = {
-    loaded = true,
-    path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/neovim-session-manager",
-    url = "https://github.com/Shatur/neovim-session-manager"
-  },
   ["nui.nvim"] = {
     loaded = true,
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/nui.nvim",
@@ -361,6 +356,11 @@ _G.packer_plugins = {
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  ["persisted.nvim"] = {
+    loaded = true,
+    path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/persisted.nvim",
+    url = "https://github.com/olimorris/persisted.nvim"
+  },
   ["plenary.nvim"] = {
     loaded = true,
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/plenary.nvim",
@@ -436,11 +436,6 @@ _G.packer_plugins = {
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/vim-repeat",
     url = "https://github.com/tpope/vim-repeat"
   },
-  ["vim-startify"] = {
-    loaded = true,
-    path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/vim-startify",
-    url = "https://github.com/mhinz/vim-startify"
-  },
   ["vim-surround"] = {
     loaded = true,
     path = "/Users/crusj/.local/share/nvim/site/pack/packer/start/vim-surround",
@@ -459,14 +454,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: hop.nvim
-time([[Config for hop.nvim]], true)
-try_loadstring("\27LJ\2\nU\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\tkeys\28etovxqpdygfblzhckisuran\nsetup\bhop\frequire\0", "config", "hop.nvim")
-time([[Config for hop.nvim]], false)
 -- Config for: color-picker.nvim
 time([[Config for color-picker.nvim]], true)
 try_loadstring("\27LJ\2\n,\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\17color-picker\frequire\0", "config", "color-picker.nvim")
 time([[Config for color-picker.nvim]], false)
+-- Config for: hop.nvim
+time([[Config for hop.nvim]], true)
+try_loadstring("\27LJ\2\nU\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\tkeys\28etovxqpdygfblzhckisuran\nsetup\bhop\frequire\0", "config", "hop.nvim")
+time([[Config for hop.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

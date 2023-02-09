@@ -1,16 +1,17 @@
-vim.cmd("hi  DapUIScope guifg=#46abf5")
-vim.cmd("hi  DapUIType guifg=#D484FF")
+vim.cmd("hi  DapUINormal guifg=white")
+vim.cmd("hi  DapUIScope guifg=red")
+vim.cmd("hi  DapUIType guifg=red")
 vim.cmd("hi  DapUIModifiedValue guifg=#0000FF gui=bold")
-vim.cmd("hi  DapUIDecoration guifg=#5fb0f5")
+vim.cmd("hi  DapUIDecoration guifg=red")
 vim.cmd("hi  DapUIThread guifg=#0000FF")
 vim.cmd("hi  DapUIStoppedThread guifg=#46abf5")
-vim.cmd("hi  DapUISource guifg=#D484FF")
-vim.cmd("hi  DapUILineNumber guifg=#fadd50")
+vim.cmd("hi  DapUISource guifg=red")
+vim.cmd("hi  DapUILineNumber guifg=red")
 vim.cmd("hi  DapUIFloatBorder guifg=#7dcb81")
 vim.cmd("hi  DapUIWatchesEmpty guifg=#F70067")
 vim.cmd("hi  DapUIWatchesValue guifg=#0000FF")
 vim.cmd("hi  DapUIWatchesError guifg=#F70067")
-vim.cmd("hi  DapUIBreakpointsPath guifg=#9692b9")
+vim.cmd("hi  DapUIBreakpointsPath guifg=red")
 vim.cmd("hi  DapUIBreakpointsInfo guifg=#feb968")
 vim.cmd("hi  DapUIBreakpointsCurrentLine guifg=#404b31 gui=bold")
 vim.cmd("hi  link DapUIBreakpointsLine DapUILineNumber")
@@ -32,7 +33,12 @@ require("dapui").setup({
             size = 70, -- 40 columns
             position = "left",
         },
-    }
+    },
+    icons = {
+      collapsed = "",
+      current_frame = "",
+      expanded = ""
+    },
 })
 
 require("nvim-dap-virtual-text").setup()
