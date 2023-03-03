@@ -12,11 +12,12 @@ return require('packer').startup(function()
     -- complete; entire; absolute; unqualified. All the lua functions I don't want to write twice.
     use 'nvim-lua/plenary.nvim'
     use 'mhinz/vim-startify'
-    -- use 'Shatur/neovim-session-manager'
+    use 'Shatur/neovim-session-manager'
     -- Lua
-    use({
-        "olimorris/persisted.nvim",
-    })
+    -- use({
+    --     module = "persisted",
+    --     "olimorris/persisted.nvim",
+    -- })
 
     -- Neovim plugin to manage the file system and other tree like structures.
     use {

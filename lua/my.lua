@@ -77,7 +77,7 @@ function my.copy_last_git_msg()
     end
 
     local lines = {}
-    local cmd = "git log -5 --pretty=format:%B"
+    local cmd = "git log -10 --pretty=format:%B"
     vim.fn.jobstart(cmd, {
         on_stdout = function(_, data)
             for _, line in pairs(data) do
