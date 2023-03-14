@@ -60,8 +60,6 @@ return require('packer').startup(function()
     use 'mfussenegger/nvim-lint'
     use 'ray-x/lsp_signature.nvim'
     use 'ray-x/go.nvim'
-    use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
-
 
     -- search
     use 'nvim-telescope/telescope.nvim'

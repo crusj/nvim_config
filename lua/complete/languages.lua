@@ -21,7 +21,7 @@ end
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- golang
-lspconfig['gopls'].setup {
+lspconfig.gopls.setup {
     capabilities = capabilities,
     on_attach = custom_attach,
     settings = {
@@ -36,7 +36,7 @@ local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
-lspconfig['sumneko_lua'].setup {
+lspconfig['lua_ls'].setup {
     capabilities = capabilities,
     on_attach = custom_attach,
     settings = {
