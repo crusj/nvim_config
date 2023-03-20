@@ -94,3 +94,8 @@ autocmd FileType go nnoremap <silent> gac A //
 autocmd FileType go nnoremap <silent> zf ?^func<cr>zz
 autocmd FileType go nnoremap <silent> gsm ^wv"ryve"+yf{%o<cr>func (*<esc>"+pa) name {<cr>}<esc>kf(a<esc>"rp~i <esc>/name<cr>ce
 ]])
+
+-- gotest
+vim.cmd([[
+let g:gotests_template = ""
+]])

@@ -1,14 +1,13 @@
 local my     = {
     git_log_buf = nil,
     git_log_win = nil,
-
     op_buf = nil,
     op_win = nil,
     op_cache = {},
-
     op_commit_buf = nil,
     op_commit_win = nil,
     op_commit_cache = {},
+    format_sync_grp = vim.api.nvim_create_augroup("GoFmt", {})
 }
 local notify = require("notify")
 
@@ -238,6 +237,86 @@ function my.close_op_commit_win()
     if my.op_commit_win ~= nil and vim.api.nvim_win_is_valid(my.op_commit_win) then
         vim.api.nvim_win_close(my.op_commit_win, true)
     end
+end
+
+-- go imports
+function my.go_imports()
+    my.clear_import()
+    if vim.fn.getbufinfo("%")[1].changed == 1 then
+        vim.cmd("write")
+    end
+
+    local file_name = vim.fn.expand("%:p")
+    local cmd = "goimports " .. file_name
+    local old_lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+    local cursor = vim.api.nvim_win_get_cursor(0)
+    vim.fn.jobstart(cmd, {
+        on_exit   = function(_, data, _)
+            my.add_import()
+        end,
+        on_stdout = function(_, new_lines, _)
+            new_lines = my.handle_import(new_lines)
+            if not new_lines then
+                return
+            end
+            -- 相同检查
+            if #new_lines == #old_lines then
+                local is_same = true
+                for k, v in ipairs(new_lines) do
+                    if v ~= old_lines[k] then
+                        is_same = false
+                        break
+                    end
+                end
+                if is_same then
+                    print("✌️")
+                    return
+                end
+            end
+
+            vim.api.nvim_buf_set_lines(0, 0, -1, false, new_lines)
+            local changed_lines = #new_lines - #old_lines
+            vim.api.nvim_win_set_cursor(0, { cursor[1] + changed_lines, cursor[2] })
+            old_lines = nil
+            vim.cmd("write")
+        end,
+        on_stderr = function(_, data, _)
+        end
+    })
+end
+
+function my.handle_import(data)
+    if not data then
+        return nil
+    end
+    -- Because the nvim.stdout's data will have an extra empty line at end on some OS (e.g. maxOS), we should remove it.
+    for _ = 1, 3, 1 do
+        if data[#data] == '' then
+            table.remove(data, #data)
+        end
+    end
+    if #data < 1 then
+        return nil
+    end
+    return data
+end
+
+function my.add_import()
+    vim.api.nvim_create_autocmd("BufWritePre", {
+        pattern = "*.go",
+        callback = function()
+            require('my').go_imports()
+        end,
+        group = my.format_sync_grp,
+    })
+end
+
+function my.clear_import()
+    vim.api.nvim_clear_autocmds({
+        event = "BufWritePre",
+        pattern = "*.go",
+        group=my.format_sync_grp
+    })
 end
 
 return my

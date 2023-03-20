@@ -8,3 +8,6 @@ vim.keymap.set("n", "gv", ":lua require'bookmarks.float'.create_win({})<CR>", { 
 vim.keymap.set("n", "bco", ":lua require'my'.close_others_buff()<CR>", { silent = true })
 vim.keymap.set("n", "bcl", ":BufferLineCloseLeft<CR>", { silent = true })
 vim.keymap.set("n", "bcr", ":BufferLineCloseRight<CR>", { silent = true })
+
+--auto
+require("my").add_import()

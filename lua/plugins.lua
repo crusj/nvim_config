@@ -59,6 +59,7 @@ return require('packer').startup(function()
     use "rafamadriz/friendly-snippets"
     use 'mfussenegger/nvim-lint'
     use 'ray-x/lsp_signature.nvim'
+    use 'github/copilot.vim'
     use 'ray-x/go.nvim'
 
     -- search
@@ -142,6 +143,7 @@ return require('packer').startup(function()
 
     -- test and debug
     use 'vim-test/vim-test'
+    use 'buoto/gotests-vim'
     use 'mfussenegger/nvim-dap'
     use 'leoluz/nvim-dap-go'
     use 'rcarriga/nvim-dap-ui'

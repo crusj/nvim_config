@@ -14,8 +14,8 @@ local function custom_attach(client, bufnr)
         floating_window_off_x          = 1, -- adjust float windows x position.
         floating_window_off_y          = 1,
         max_width                      = 200,
-
     }, bufnr)
+    vim.keymap.set('n', '<leader>fa', vim.lsp.buf.code_action, {buffer = bufnr})
 end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())

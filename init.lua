@@ -3,12 +3,13 @@ require('options')
 require('plugins')
 require('complete')
 
+require("bookmarks_setup")
 require('telescope_setup')
 require('session_manager_setup')
 require('buffline_setup')
 require('color_setup')
 require('lualine_setup')
-require('vim-go_setup')
+-- require('vim-go_setup')
 require('treesitter_setup')
 require('maps')
 require('comment_setup')
@@ -24,7 +25,6 @@ require('my_setup')
 require('dap_setup')
 
 require("strutrue_go_setup")
-require("bookmarks_setup")
 require("hierarchy-tree-go").setup({
 	keymap = {
 		close = "\\hc" ,
@@ -48,8 +48,9 @@ require("scroll_setup")
 
 require("minimap_setup")
 require("mind_setup")
---require("tabnine_setup")
+require("copilot_setup")
 require("illuminate_setup")
 
 require("tail")
 
+require("highlight_setup")

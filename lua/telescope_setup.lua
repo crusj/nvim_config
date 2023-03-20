@@ -42,7 +42,7 @@ require('telescope').setup {
 		frecency = {
 			show_scores = true,
 			default_workspace = 'CWD'
-		}
+		},
 
 	}
 }
@@ -50,6 +50,7 @@ require('telescope').setup {
 require('telescope').load_extension('fzf')
 require("telescope").load_extension("ui-select")
 require("telescope").load_extension("frecency")
+require("telescope").load_extension("bookmarks")
 
 vim.cmd([[
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
@@ -62,7 +63,6 @@ nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fi <cmd>lua require('telescope.builtin').lsp_implementations()<cr>
 nnoremap <leader>fr <cmd>lua require('telescope.builtin').lsp_references()<cr>
-nnoremap <leader>fa <cmd>lua require('telescope.builtin').lsp_code_actions()<cr>
 nnoremap <leader>fm <cmd>lua require('telescope.builtin').marks()<cr>
 nnoremap <leader>fq <cmd>lua require('telescope.builtin').quickfix()<cr>
 nnoremap <leader>fc <cmd>lua require('telescope.builtin').commands()<cr>
@@ -70,4 +70,5 @@ nnoremap <leader>fo <cmd>lua require('telescope.builtin').oldfiles()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').command_history()<cr>
 nnoremap <leader>f/ <cmd>lua require('telescope.builtin').search_history()<cr>
 nnoremap <leader>f* <cmd>lua require('telescope.builtin').grep_string()<cr>
+nnoremap <leader><space><space> <cmd>Telescope bookmarks<cr>
 ]])

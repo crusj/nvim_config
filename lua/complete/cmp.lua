@@ -34,32 +34,32 @@ local source_mapping = {
 }
 
 local symbol_map = {
-    Text = "",
-    Method = "",
-    Function = "",
-    Constructor = "",
-    Field = "ﰠ",
-    Variable = "",
-    Class = "ﴯ",
-    Interface = "",
-    Module = "",
-    Property = "ﰠ",
-    Unit = "塞",
-    Value = "",
-    Enum = "",
-    Keyword = "",
-    Snippet = "",
-    Color = "",
-    File = "",
-    Reference = "",
-    Folder = "",
-    EnumMember = "",
-    Constant = "",
-    Struct = "פּ",
-    Event = "",
-    Operator = "",
-    TypeParameter = "",
-    TN = "",
+    Text = '  ',
+    Method = '󰡱  ',
+    Function = '󰊕  ',
+    Constructor = '  ',
+    Field = '  ',
+    Variable = '  ',
+    Class = '  ',
+    Interface = '  ',
+    Module = "  ",
+    Package = ' ',
+    Property = '  ',
+    Unit = '  ',
+    Value = '  ',
+    Enum = '  ',
+    Keyword = '  ',
+    Snippet = '  ',
+    Color = '  ',
+    File = '  ',
+    Reference = '  ',
+    Folder = '  ',
+    EnumMember = '  ',
+    Constant = '  ',
+    Struct = '  ',
+    Event = '  ',
+    Operator = '  ',
+    TypeParameter = '  ',
 }
 
 for i = 1, 100, 1 do
@@ -71,6 +71,7 @@ for i = 1, 100, 1 do
     local tmp = string.format("TN[%s%%]", percentStr)
     symbol_map[tmp] = ""
 end
+
 
 cmp.setup({
     matching = {
@@ -129,6 +130,13 @@ cmp.setup({
                 fallback()
             end
         end,
+        ['<A-j>'] = function()
+            if cmp.visible() then
+                cmp.abort()
+            else
+                cmp.complete()
+            end
+        end
     },
     sources = cmp.config.sources({
         {
@@ -158,41 +166,44 @@ cmp.setup({
         },
     }),
     formatting = {
-        format = lspkind.cmp_format({
-            mode = 'symbol_text', -- show only symbol annotations
-            maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-            before = function(entry, vim_item)
-                -- local label = vim_item.abbr
-                -- local truncated_label = vim.fn.strcharpart(label, 0, MAX_LABEL_WIDTH)
-                -- if truncated_label ~= label then
-                --     vim_item.abbr = truncated_label .. ELLIPSIS_CHAR
-                -- elseif string.len(label) < MIN_LABEL_WIDTH then
-                --     vim_item.abbr = label .. string.rep(' ', MIN_LABEL_WIDTH - string.len(label))
-                -- end
-                -- return vim_item
-                -- vim_item.kind = lspkind.symbolic(vim_item.kind, {mode = "symbol"})
+        fields = { "kind", "abbr", "menu" },
+        format = function(entry, vim_item)
+            local kind = lspkind.cmp_format({
+                mode = 'symbol_text', -- show only symbol annotations
+                maxwidth = 50,        -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+                before = function()
+                    vim_item.menu = source_mapping[entry.source.name]
+                    if entry.source.name == "cmp_tabnine" then
+                        local detail = (entry.completion_item.data or {}).detail
+                        vim_item.kind = "TN"
+                        if detail and detail:find('.*%%.*') then
+                            vim_item.kind = vim_item.kind .. '[' .. detail .. ']'
+                        end
 
-
-                vim_item.menu = source_mapping[entry.source.name]
-                if entry.source.name == "cmp_tabnine" then
-                    local detail = (entry.completion_item.data or {}).detail
-                    vim_item.kind = "TN"
-                    if detail and detail:find('.*%%.*') then
-                        vim_item.kind = vim_item.kind .. '[' .. detail .. ']'
+                        if (entry.completion_item.data or {}).multiline then
+                            vim_item.kind = vim_item.kind .. ' ' .. '[ML]'
+                        end
                     end
 
-                    if (entry.completion_item.data or {}).multiline then
-                        vim_item.kind = vim_item.kind .. ' ' .. '[ML]'
-                    end
-                end
+                    local maxwidth = 80
+                    vim_item.abbr = string.sub(vim_item.abbr, 1, maxwidth)
 
-                local maxwidth = 80
-                vim_item.abbr = string.sub(vim_item.abbr, 1, maxwidth)
+                    return vim_item
+                end,
+                symbol_map = symbol_map,
+            })(entry, vim_item)
+            local strings = vim.split(kind.kind, "%s", { trimemtpy = true })
+            kind.kind = " " .. (strings[1] or "") .. " "
+            kind.menu = " " .. (strings[4] or "") .. " "
 
-                return vim_item
-            end,
-            symbol_map = symbol_map,
-        })
+            return kind
+        end
     },
     preselect = cmp.PreselectMode.None,
 })
+
+
+-- autopairs
+require('nvim-autopairs').setup{}
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex = '' } }))

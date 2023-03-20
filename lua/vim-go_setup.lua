@@ -1,6 +1,6 @@
-require('go').setup{
-	run_in_floaterm = true,
-    goimport='goimports', -- gopls
+require('go').setup {
+    run_in_floaterm = true,
+    goimport = 'goimports', -- gopls
     gofmt = 'gofumpt',
     lsp_gofumpt = true,
 }
@@ -23,9 +23,9 @@ autocmd FileType go nnoremap <silent> gfd <cmd>GoDoc<cr>
 
 local format_sync_grp = vim.api.nvim_create_augroup("GoImport", {})
 vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*.go",
-  callback = function()
-   require('go.format').goimport()
-  end,
-  group = format_sync_grp,
+    pattern = "*.go",
+    callback = function()
+        require('go.format').goimport()
+    end,
+    group = format_sync_grp,
 })
