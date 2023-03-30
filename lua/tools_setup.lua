@@ -11,7 +11,7 @@ require("toggleterm").setup{
     auto_scroll = false,
     highlights = {
         FloatBorder = {
-            guifg = "red",
+            guifg = "#8c2eb8",
         },
     }
 }

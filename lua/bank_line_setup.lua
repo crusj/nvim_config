@@ -6,10 +6,6 @@ let g:indent_blankline_indent_level = 4
 let g:indent_blankline_filetype = ['lua','go']
 let g:indent_blankline_show_trailing_blankline_indent = v:false
 
-highlight IndentBlanklineChar guifg=#FFBDA9 gui=nocombine
-highlight IndentBlanklineContextChar guifg=#FF6678 gui=nocombine
-highlight IndentBlanklineContextStart guisp=#00FF00 gui=bold
-
 ]])
 
 require("indent_blankline").setup {

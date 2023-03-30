@@ -6,7 +6,7 @@ local cmp_higlights = {
     CmpItemAbbrDeprecated = { fg = "#7E8294", bg = "NONE", fmt = "strikethrough" },
     CmpItemAbbrMatch = { fg = "#82AAFF", bg = "NONE", fmt = "bold" },
     CmpItemAbbrMatchFuzzy = { fg = "#82AAFF", bg = "NONE", fmt = "bold" },
-    CmpItemMenu = { fg = "black", bg = "NONE", fmt = "italic" },
+    CmpItemMenu = { fg = "white", bg = "NONE", fmt = "italic" },
 
     CmpItemKindField = { fg = "#EED8DA", bg = "#B5585F" },
     CmpItemKindProperty = { fg = "#EED8DA", bg = "#B5585F" },
@@ -37,7 +37,7 @@ local cmp_higlights = {
     CmpItemKindValue = { fg = "#DDE5F5", bg = "#6C8ED4" },
     CmpItemKindEnumMember = { fg = "#DDE5F5", bg = "#6C8ED4" },
 
-    CmpItemKindInterface = { fg = "#D8EEEB", bg = "#58B5A8" },
+    CmpItemKindInterface = { fg = "#d8eeeb", bg = "#58B5A8" },
     CmpItemKindColor = { fg = "#D8EEEB", bg = "#58B5A8" },
     CmpItemKindTypeParameter = { fg = "#D8EEEB", bg = "#58B5A8" },
 }

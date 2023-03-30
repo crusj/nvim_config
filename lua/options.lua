@@ -1,6 +1,6 @@
 -- sets
 local global_options = {
-	background = "light",
+	background = "dark",
 	termguicolors = true,
 	hidden = true,
 	autowrite = true,
@@ -25,8 +25,7 @@ end
 
 --hl
 vim.api.nvim_create_autocmd("VimEnter", {
-	callback = function()
-		vim.cmd([[
+	callback = function() vim.cmd([[
 			highlight CmpItemAbbrMatch guifg=#268bd2
 		]])
 	end

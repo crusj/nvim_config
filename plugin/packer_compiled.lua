@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["ChatGPT.nvim"] = {
+    loaded = true,
+    path = "/home/jianglong/.local/share/nvim/site/pack/packer/start/ChatGPT.nvim",
+    url = "https://github.com/jackMort/ChatGPT.nvim"
+  },
   LuaSnip = {
     loaded = true,
     path = "/home/jianglong/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -83,6 +88,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jianglong/.local/share/nvim/site/pack/packer/start/NeoSolarized",
     url = "https://github.com/overcache/NeoSolarized"
+  },
+  ["Trans.nvim"] = {
+    loaded = true,
+    path = "/home/jianglong/.local/share/nvim/site/pack/packer/start/Trans.nvim",
+    url = "https://github.com/JuanZoran/Trans.nvim"
   },
   ["asyncrun.vim"] = {
     loaded = true,
@@ -98,6 +108,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jianglong/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
+  },
+  catppuccino = {
+    loaded = true,
+    path = "/home/jianglong/.local/share/nvim/site/pack/packer/start/catppuccino",
+    url = "https://github.com/catppuccin/nvim"
   },
   ["cmp-buffer"] = {
     loaded = true,
@@ -175,6 +190,11 @@ _G.packer_plugins = {
     path = "/home/jianglong/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["gotests-vim"] = {
+    loaded = true,
+    path = "/home/jianglong/.local/share/nvim/site/pack/packer/start/gotests-vim",
+    url = "https://github.com/buoto/gotests-vim"
+  },
   ["guihua.lua"] = {
     loaded = true,
     path = "/home/jianglong/.local/share/nvim/site/pack/packer/start/guihua.lua",
@@ -250,6 +270,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jianglong/.local/share/nvim/site/pack/packer/start/neovim-session-manager",
     url = "https://github.com/Shatur/neovim-session-manager"
+  },
+  ["nightfox.nvim"] = {
+    loaded = true,
+    path = "/home/jianglong/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
+    url = "https://github.com/EdenEast/nightfox.nvim"
   },
   ["nui.nvim"] = {
     loaded = true,
@@ -351,6 +376,11 @@ _G.packer_plugins = {
     path = "/home/jianglong/.local/share/nvim/site/pack/packer/start/nvim-window-picker",
     url = "https://github.com/s1n7ax/nvim-window-picker"
   },
+  ["onedarkpro.nvim"] = {
+    loaded = true,
+    path = "/home/jianglong/.local/share/nvim/site/pack/packer/start/onedarkpro.nvim",
+    url = "https://github.com/olimorris/onedarkpro.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/jianglong/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -365,6 +395,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jianglong/.local/share/nvim/site/pack/packer/start/rest.nvim",
     url = "https://github.com/NTBBloodbath/rest.nvim"
+  },
+  spaceduck = {
+    loaded = true,
+    path = "/home/jianglong/.local/share/nvim/site/pack/packer/start/spaceduck",
+    url = "https://github.com/pineapplegiant/spaceduck"
   },
   ["splitjoin.vim"] = {
     loaded = true,

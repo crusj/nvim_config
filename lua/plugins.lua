@@ -60,7 +60,7 @@ return require('packer').startup(function()
     use 'mfussenegger/nvim-lint'
     use 'ray-x/lsp_signature.nvim'
     use 'github/copilot.vim'
-    use 'ray-x/go.nvim'
+
 
     -- search
     use 'nvim-telescope/telescope.nvim'
@@ -74,6 +74,12 @@ return require('packer').startup(function()
     }
     use { "tami5/sqlite.lua" }
     use 'nvim-telescope/telescope-frecency.nvim'
+    use({
+        "jackMort/ChatGPT.nvim",
+        requires = {
+            "MunifTanjim/nui.nvim",
+        }
+    })
 
     -- tools
     use 'windwp/nvim-autopairs'
@@ -125,7 +131,8 @@ return require('packer').startup(function()
     -- A more adventurous wildmenu
     use 'gelguy/wilder.nvim'
     use "lukas-reineke/indent-blankline.nvim"
-    use({ "ziontee113/color-picker.nvim",
+    use({
+        "ziontee113/color-picker.nvim",
         config = function()
             require("color-picker")
         end,
@@ -134,6 +141,10 @@ return require('packer').startup(function()
     -- a smooth scrolling neovim plugin written in lua.
     use 'karb94/neoscroll.nvim'
     use { 'echasnovski/mini.nvim', branch = 'main' }
+    use {
+        'JuanZoran/Trans.nvim',
+        requires = 'kkharji/sqlite.lua',
+    }
 
 
     -- treesitter
@@ -153,6 +164,16 @@ return require('packer').startup(function()
     use 'overcache/NeoSolarized'
     use 'ishan9299/nvim-solarized-lua'
     use '4513ECHO/vim-colors-hatsunemiku'
+    use "olimorris/onedarkpro.nvim"
+    use {
+        'pineapplegiant/spaceduck',
+        branch = "main"
+    }
+    use "EdenEast/nightfox.nvim" -- Packer
+    use {
+        "catppuccin/nvim",
+        as = "catppuccino"
+    }
 
     -- git
     use 'sindrets/diffview.nvim'

@@ -100,7 +100,7 @@ function my.copy_last_git_msg()
                 border = "double",
             })
 
-            vim.api.nvim_win_set_option(my.git_log_win, "winhighlight", "CursorLine:hl_git_log_csl")
+            -- vim.api.nvim_win_set_option(my.git_log_win, "winhighlight", "CursorLine:hl_git_log_csl")
             vim.api.nvim_buf_set_lines(my.git_log_buf, 0, #lines, false, lines)
         end
     })
@@ -154,7 +154,7 @@ function my.open_op_win()
         border = "double",
     })
 
-    vim.api.nvim_win_set_option(my.op_win, "winhighlight", "CursorLine:hl_git_log_csl")
+    -- vim.api.nvim_win_set_option(my.op_win, "winhighlight", "CursorLine:hl_git_log_csl")
     vim.api.nvim_buf_set_lines(my.op_buf, 0, #my.op_cache, false, my.op_cache)
 end
 
@@ -211,7 +211,7 @@ function my.open_op_commit_win(id)
         border = "double",
     })
 
-    vim.api.nvim_win_set_option(my.op_commit_win, "winhighlight", "CursorLine:hl_git_log_csl")
+    -- vim.api.nvim_win_set_option(my.op_commit_win, "winhighlight", "CursorLine:hl_git_log_csl")
     vim.api.nvim_buf_set_lines(my.op_commit_buf, 0, #lines, false, lines)
 end
 

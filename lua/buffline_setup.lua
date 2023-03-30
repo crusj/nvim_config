@@ -57,7 +57,7 @@ require('bufferline').setup {
             bold = true,
         },
         background = {
-            fg = "#4284F4",
+            fg = "#d97798",
         },
         pick = {
             fg = "#EA4336",
@@ -76,7 +76,7 @@ require('bufferline').setup {
             bold = true,
         },
         numbers_selected = {
-            fg = "red",
+            fg = "yellow",
             bold = true,
         }
     }
