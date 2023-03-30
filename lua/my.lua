@@ -7,7 +7,10 @@ local my     = {
     op_commit_buf = nil,
     op_commit_win = nil,
     op_commit_cache = {},
-    format_sync_grp = vim.api.nvim_create_augroup("GoFmt", {})
+    format_sync_grp = vim.api.nvim_create_augroup("GoFmt", {}),
+    stock_price = "",
+    stock_percent = "",
+    getting_stock_price = false
 }
 local notify = require("notify")
 
@@ -315,8 +318,38 @@ function my.clear_import()
     vim.api.nvim_clear_autocmds({
         event = "BufWritePre",
         pattern = "*.go",
-        group=my.format_sync_grp
+        group = my.format_sync_grp
     })
+end
+
+function my.stock()
+    if my.getting_stock_price == false then
+        my.is_get_price = true
+        vim.fn.jobstart("curl -s -H 'Referer: http://finance.sina.com.cn' 'http://hq.sinajs.cn/list=s_sh000001'", {
+            on_stdout = function(_, data, _)
+                if data[1] ~= nil and data[1] ~= "" then
+                    local cuts = vim.split(data[1], ",")
+                    my.stock_price = string.format("%.1f", cuts[2])
+                    my.stock_percent = string.format("%.2f", cuts[4])
+                end
+            end,
+            on_exit = function()
+                my.is_get_price = false
+            end
+        })
+    end
+end
+
+function my.get_stock_price()
+    -- 判断当前时间为周一到周五的9:30-15:00
+    if vim.fn.localtime().wday >= 2 and vim.fn.localtime().wday <= 6 and vim.fn.localtime().hour >= 9 and vim.fn.localtime().hour <= 15 then
+        my.stock()
+    end
+    if my.stock_price ~= "" then
+        return my.stock_price .. "|" .. my.stock_percent .. "%%"
+    end
+
+    return ""
 end
 
 return my

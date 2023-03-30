@@ -16,5 +16,4 @@ require("chatgpt").setup({
     },
 })
 vim.cmd([[
-hi! ChatGPTQuestion guifg=black
 ]])

@@ -15,7 +15,6 @@ lualine.setup({
             {
                 'mode',
                 padding = 1,
-
             }
         },
         lualine_c = {
@@ -24,18 +23,16 @@ lualine.setup({
                 -- color = { fg = '#287BC9' },
                 color = { fg = 'white', gui = 'bold' },
                 icon = { '📦' }
-
             },
             {
                 'filename',
                 path = 1,
                 -- color = { fg = '#2D9799' },
-                color = { fg = '#FEDE5B', gui = 'italic'},
+                color = { fg = '#FEDE5B', gui = 'italic' },
                 icon = { '📜' }
             },
             {
                 gps.get_location,
-
                 cond = gps.is_available,
                 --color = { fg = '#ffaa88', gui = 'italic,bold' }
                 color = { fg = 'white', gui = 'italic' }
@@ -45,7 +42,10 @@ lualine.setup({
             {
                 'location'
             },
-
+            {
+                icon = {"〽️"},
+                require("my").get_stock_price
+            },
             {
                 icon = { "⏰" },
                 helper.get_time_str,
