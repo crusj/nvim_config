@@ -50,6 +50,7 @@ require("mind_setup")
 require("copilot_setup")
 require("illuminate_setup")
 require("chatgpt_setup")
+require("codeium_setup")
 
 require("tail")
 

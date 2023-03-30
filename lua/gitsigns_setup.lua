@@ -2,6 +2,7 @@ vim.cmd([[
 highlight MyGitSignsAdd guifg=Green guibg=normal cterm=bold
 highlight MyGitSignsDelete guifg=Red guibg=normal cterm=bold
 highlight MyGitSignsChange guifg=#b58900 guibg=normal cterm=bold
+highlight GitSignsCurrentLineBlame guifg=DarkOrange guibg=normal cterm=bold
 ]])
 
 require('gitsigns').setup {

@@ -11,9 +11,6 @@ local my     = {
     stock_price = "",
     stock_value = "",
     stock_percent = "",
-    currency_price = "",
-    currency_value = "",
-    currency_percent = "",
     getting_stock_price = false
 }
 local notify = require("notify")
@@ -329,21 +326,16 @@ end
 function my.stock()
     if my.getting_stock_price == false then
         my.getting_stock_price = true
-        vim.fn.jobstart(
-        "curl -s -H 'Referer: http://finance.sina.com.cn' 'http://hq.sinajs.cn/list=s_sh000001,s_sh511990'", {
+        vim.fn.jobstart("curl -s -H 'Referer: http://finance.sina.com.cn' 'http://hq.sinajs.cn/list=s_sh000001,s_511990'", {
             on_stdout = function(_, data, _)
-                if data[1] ~= nil and data[1] ~= "" then
-                    local cuts = vim.split(data[1], ",")
-                    my.stock_price = string.format("%.2f", cuts[2])
-                    my.stock_percent = string.format("%.2f", cuts[4])
-                    my.stock_value = string.format("%.2f", cuts[3])
-                end
-                if data[2] ~= nil and data[2] ~= "" then
-                    local cuts = vim.split(data[2], ",")
-                    my.currency_price = string.format("%.3f", cuts[2])
-                    my.currency_percent = string.format("%.3f", cuts[4])
-                    my.currency_value = string.format("%.3f", cuts[3])
-                end
+                print(vim.inspect(data))
+
+                -- if data[1] ~= nil and data[1] ~= "" then
+                --     local cuts = vim.split(data[1], ",")
+                --     my.stock_price = string.format("%.2f", cuts[2])
+                --     my.stock_percent = string.format("%.2f", cuts[4])
+                --     my.stock_value = string.format("%.2f", cuts[3])
+                -- end
             end,
             on_exit = function()
                 my.getting_stock_price = false
@@ -361,7 +353,7 @@ function my.get_stock_price()
     -- end
     my.stock()
     if my.stock_price ~= "" then
-        return my.stock_price .. "|" .. my.stock_value .. "|" .. my.stock_percent .. "%%" .. "🍃" .. my.currency_price.."|"..my.currency_value.."|"..my.currency_percent.."%%"
+        return my.stock_price .. "|" .. my.stock_value.."|"..my.stock_percent .. "%%"
     end
 
     return ""

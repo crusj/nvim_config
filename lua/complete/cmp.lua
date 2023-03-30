@@ -57,6 +57,7 @@ local symbol_map = {
     Event = '  ',
     Operator = '  ',
     TypeParameter = '  ',
+    Codeium = ''
 }
 
 for i = 1, 100, 1 do
@@ -86,7 +87,6 @@ cmp.setup({
             require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
         end,
     },
-
     mapping = {
         ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
         ['<CR>'] = function(fallback)
@@ -142,14 +142,14 @@ cmp.setup({
             name = 'nvim_lsp',
         },
         {
+            name = 'codeium'
+        },
+        {
             name = 'nvim_lua'
         },
         {
             name = 'luasnip',
 
-        },
-        {
-            name = 'cmp_tabnine'
         },
         {
             name = 'buffer',
@@ -190,7 +190,7 @@ cmp.setup({
             })(entry, vim_item)
             local strings = vim.split(kind.kind, "%s", { trimemtpy = true })
             kind.kind = " " .. (strings[1] or "") .. " "
-            kind.menu = " " .. (strings[4] or "") .. " "
+            kind.menu = " " .. (strings[4] or strings[2] or "") .. " "
 
             return kind
         end
@@ -200,6 +200,6 @@ cmp.setup({
 
 
 -- autopairs
-require('nvim-autopairs').setup{}
+require('nvim-autopairs').setup {}
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex = '' } }))
+cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done({ map_char = { tex = '' } }))

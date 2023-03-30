@@ -175,6 +175,18 @@ return require('packer').startup(function()
         as = "catppuccino"
     }
 
+    -- codeium
+    use {
+        "jcdickinson/http.nvim",
+        run = "cargo build --workspace --release"
+    }
+    use {
+        "jcdickinson/codeium.nvim",
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "hrsh7th/nvim-cmp",
+        },
+    }
     -- git
     use 'sindrets/diffview.nvim'
     use { 'akinsho/git-conflict.nvim', tag = "*" }
