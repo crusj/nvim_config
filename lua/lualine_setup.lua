@@ -30,7 +30,7 @@ lualine.setup({
                 'filename',
                 path = 1,
                 -- color = { fg = '#2D9799' },
-                color = { fg = '#FEDE5B' },
+                color = { fg = '#FEDE5B', gui = 'italic'},
                 icon = { '📜' }
             },
             {
@@ -38,7 +38,7 @@ lualine.setup({
 
                 cond = gps.is_available,
                 --color = { fg = '#ffaa88', gui = 'italic,bold' }
-                color = { fg = 'white', gui = 'italic,bold' }
+                color = { fg = 'white', gui = 'italic' }
             },
         },
         lualine_z = {

@@ -21,9 +21,6 @@ local has_words_before = function()
     return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 
-local ELLIPSIS_CHAR = '…'
-local MAX_LABEL_WIDTH = 40
-local MIN_LABEL_WIDTH = 40
 local source_mapping = {
     buffer = "[Buffer]",
     nvim_lsp = "[LSP]",
@@ -102,8 +99,6 @@ cmp.setup({
         ['<Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
-                -- elseif luasnip.expand_or_jumpable() then
-                -- 	luasnip.expand_or_jump()
             elseif has_words_before() then
                 cmp.complete()
             else

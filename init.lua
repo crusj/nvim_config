@@ -2,7 +2,6 @@ require('impatient')
 require('options')
 require('plugins')
 require('complete')
-require("translate_setup")
 
 require("bookmarks_setup")
 require('telescope_setup')
@@ -55,3 +54,4 @@ require("chatgpt_setup")
 require("tail")
 
 require("highlight_setup")
+require("translate_setup")
