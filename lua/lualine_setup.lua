@@ -22,20 +22,21 @@ lualine.setup({
                 helper.get_root_path,
                 -- color = { fg = '#287BC9' },
                 color = { fg = 'white', gui = 'bold' },
-                icon = { '📦' }
+                icon = { '😄' }
             },
             {
                 'filename',
                 path = 1,
+                icon = { '😊' },
                 -- color = { fg = '#2D9799' },
-                color = { fg = '#FEDE5B', gui = 'italic' },
-                icon = { '📜' }
+                color = { fg = '#FEDE5B'},
             },
             {
+                icon = { "🤠" },
                 gps.get_location,
                 cond = gps.is_available,
                 --color = { fg = '#ffaa88', gui = 'italic,bold' }
-                color = { fg = 'white', gui = 'italic' }
+                color = { fg = 'white'}
             },
         },
         lualine_z = {
@@ -43,7 +44,7 @@ lualine.setup({
                 'location'
             },
             {
-                icon = {"〽️"},
+                icon = { "〽️" },
                 require("my").get_stock_price
             },
             {
