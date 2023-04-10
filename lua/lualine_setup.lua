@@ -24,13 +24,13 @@ lualine.setup({
                 color = { fg = 'white', gui = 'bold' },
                 icon = { '😄' }
             },
-            {
-                'filename',
-                path = 1,
-                icon = { '😊' },
-                -- color = { fg = '#2D9799' },
-                color = { fg = '#FEDE5B'},
-            },
+            -- {
+            --     'filename',
+            --     path = 1,
+            --     icon = { '😊' },
+            --     -- color = { fg = '#2D9799' },
+            --     color = { fg = '#FEDE5B'},
+            -- },
             {
                 icon = { "🤠" },
                 gps.get_location,
