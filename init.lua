@@ -51,6 +51,7 @@ require("copilot_setup")
 require("illuminate_setup")
 require("chatgpt_setup")
 require("codeium_setup")
+require("glance_setup")
 
 require("tail")
 

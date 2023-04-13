@@ -175,6 +175,9 @@ return require('packer').startup(function()
         as = "catppuccino"
     }
 
+    -- glance
+    use "dnlhc/glance.nvim"
+
     -- codeium
     use {
         "jcdickinson/http.nvim",
