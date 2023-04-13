@@ -60,8 +60,7 @@ return require('packer').startup(function()
     use 'mfussenegger/nvim-lint'
     use 'ray-x/lsp_signature.nvim'
     use 'github/copilot.vim'
-
-
+    
     -- search
     use 'nvim-telescope/telescope.nvim'
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
@@ -144,7 +143,18 @@ return require('packer').startup(function()
     use {
         'JuanZoran/Trans.nvim',
         requires = 'kkharji/sqlite.lua',
-    }
+        use {
+            'edolphin-ydf/goimpl.nvim',
+            requires = {
+                { 'nvim-lua/plenary.nvim' },
+                { 'nvim-lua/popup.nvim' },
+                { 'nvim-telescope/telescope.nvim' },
+                { 'nvim-treesitter/nvim-treesitter' },
+            },
+            config = function()
+                require 'telescope'.load_extension 'goimpl'
+            end,
+        } }
 
 
     -- treesitter

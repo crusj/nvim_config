@@ -52,6 +52,7 @@ require("illuminate_setup")
 require("chatgpt_setup")
 require("codeium_setup")
 require("glance_setup")
+require("go_impl_setup")
 
 require("tail")
 
