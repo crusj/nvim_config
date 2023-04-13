@@ -19,7 +19,7 @@ local function map()
         { "nmap",     "<silent> <leader>dc",       "<cmd>DiffviewClose<cr>" },
         { "nmap",     "<silent> <leader>dh",       "<cmd>DiffviewFileHistory<cr>" },
         { "nmap",     "<silent> <leader><leader>", "<cmd>Telescope frecency<cr>" },
-        { "nmap",     "<silent> <leader>pc",        "<cmd>PickColor<cr>" },
+        { "nmap",     "<silent> <leader>pc",       "<cmd>PickColor<cr>" },
 
 
         -- move
@@ -41,7 +41,6 @@ local function map()
         { "nmap",     "<silent> fxj",              "<cmd>HopChar2AC<cr>" },
         { "nmap",     "<silent> fxk",              "<cmd>HopChar2BC<cr>" },
 
-
         -- operator movement
         { "onoremap", "p i(" },
         { "onoremap", "b i{" },
@@ -50,7 +49,9 @@ local function map()
 
         -- chatgpt
         { "vnoremap", "<silent> <leader>op",       "<cmd>'<,'>ChatGPTRun optimize_code <cr>" },
-        { "nmap",     "<silent> <leader>ch",       "<cmd>ChatGPT<cr>" }
+        { "nmap",     "<silent> <leader>ch",       "<cmd>ChatGPT<cr>" },
+        { "vnoremap",     "<silent> J",                         ":m '>+1<CR>gv-gv" },
+        { "vnoremap",     "<silent> K",                         ":m '<-2<CR>gv-gv" },
     }
 
     for _, item in ipairs(maps) do

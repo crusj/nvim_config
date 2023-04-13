@@ -7,8 +7,6 @@ require('git-conflict').setup {
     }
 }
 
-
-
 vim.keymap.set('n', 'co', '<Plug>(git-conflict-ours)')
 vim.keymap.set('n', 'ct', '<Plug>(git-conflict-theirs)')
 vim.keymap.set('n', 'cb', '<Plug>(git-conflict-both)')
