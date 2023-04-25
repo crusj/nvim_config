@@ -17,4 +17,23 @@ function string:split(sep)
     return cuts
 end
 
+function helper.Maps(maps)
+    for _, item in ipairs(maps) do
+        local cmd = ""
+        for _, piece in ipairs(item) do
+            cmd = cmd .. " " .. piece
+        end
+        vim.cmd(cmd)
+    end
+end
+
+function helper.DirectoryExists(directory)
+  local stat = vim.loop.fs_stat(directory)
+  if stat and stat.type == 'directory' then
+    return true
+  else
+    return false
+  end
+end
+
 return helper
