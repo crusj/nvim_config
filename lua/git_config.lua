@@ -1,9 +1,9 @@
 -- Lua
 local M = {}
 
-local cb = require 'diffview.config'.diffview_callback
 
 function M.Diffview()
+    local cb = require 'diffview.config'.diffview_callback
     require 'diffview'.setup {
         diff_binaries = false,    -- Show diffs for binaries
         enhanced_diff_hl = false, -- See ':h diffview-config-enhanced_diff_hl'
@@ -120,7 +120,7 @@ function M.Diffview()
     }
 end
 
-function M.conflict()
+function M.Conflict()
     require('git-conflict').setup {
         default_mappings = false,    -- disable buffer local mapping created by this plugin
         disable_diagnostics = false, -- This will disable the diagnostics in a buffer whilst it is conflicted

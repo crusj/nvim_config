@@ -414,40 +414,6 @@ require("lazy").setup({
         end
     },
 
-    -- 笔记,note
-    {
-        'phaazon/mind.nvim',
-        branch = 'v2.2',
-        dependencies = { 'nvim-lua/plenary.nvim' },
-        config = function()
-            require 'mind'.setup {
-                ui = {
-                    icon_preset = {
-                        { " ", "Sub-project" },
-                        { " ", "Journal, newspaper, weekly and daily news" },
-                        { " ", "For when you have an idea" },
-                        { " ", "Note taking?" },
-                        { "陼",  "Task management" },
-                        { " ", "Uncheck, empty square or backlog" },
-                        { " ", "Full square or on-going" },
-                        { " ", "Check or done" },
-                        { " ", "Trash bin, deleted, cancelled, etc." },
-                        { " ", "GitHub" },
-                        { " ", "Monitoring" },
-                        { " ", "Internet, Earth, everyone!" },
-                        { " ", "Frozen, on-hold" },
-                        { "",     "Delete" },
-                        { " ", "Unfinished" }
-                    }
-                }
-
-            }
-
-            vim.keymap.set("n", "<space>mm", ":MindOpenMain<CR>", { silent = true })
-            vim.keymap.set("n", "<space>mn", ":MindOpenProject<CR>", { silent = true })
-        end
-    },
-
     -- 搜索替换,seach,replace
     {
         'windwp/nvim-spectre',
@@ -1040,6 +1006,23 @@ require("lazy").setup({
                 hi GlanceBorderTop guibg=#7fd44c
             ]])
         end,
+    },
+
+    -- wiki
+    {
+        "vimwiki/vimwiki",
+        init = function()
+            vim.g.vimwiki_list = {
+                {
+                    path = '~/Sync/wiki',
+                }
+            }
+            vim.cmd([[
+                set nocompatible
+                filetype plugin on
+                syntax on
+            ]])
+        end
     }
 })
 
