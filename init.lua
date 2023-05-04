@@ -239,16 +239,17 @@ require("lazy").setup({
     -- treesitter
     {
         'nvim-treesitter/nvim-treesitter',
-        build = ':TSUpdate',
         lazy = false,
+        tag = "v0.8.*",
         config = function()
             require 'nvim-treesitter.configs'.setup {
                 curl = { "--proxy", "http://127.0.0.1:7890" },
                 -- One of "all", "maintained" (parsers with maintainers), or a list of languages
-                -- ensure_installed = { "go", "lua", "gomod", "http", "json", "vim", "yaml", "bash" },
+                ensure_installed = { "go", "lua", "gomod", "http", "json", "vim", "yaml", "bash" },
 
                 -- Install languages synchronously (only applied to `ensure_installed`)
                 sync_install = false,
+                auto_install = true,
 
                 -- List of parsers to ignore installing
                 ignore_install = { "javascript" },
@@ -263,7 +264,7 @@ require("lazy").setup({
                     -- Using this option may slow down your editor, and you may see some duplicate highlights.
                     -- Instead of true it can also be a list of languages
                     -- additional_vim_regex_highlighting = { "" },
-                    ensure_installed = {}
+                    -- ensure_installed = { "http", "json", "php" }
                 },
                 rainbow = {
                     enable = true,
@@ -280,7 +281,7 @@ require("lazy").setup({
                 'p00f/nvim-ts-rainbow',
             },
         },
-        priority = 1000,
+        priority = 999,
     },
 
     {
@@ -385,7 +386,7 @@ require("lazy").setup({
     -- http
     {
         'NTBBloodbath/rest.nvim',
-        keys = { "\\rh" },
+        ft="http",
         config = function()
             require("rest-nvim").setup({
                 -- Open request results in a horizontal split
@@ -411,7 +412,8 @@ require("lazy").setup({
             })
 
             vim.cmd([[nmap <silent> <leader>rh <Plug>RestNvim]])
-        end
+        end,
+        dependencies = { "nvim-lua/plenary.nvim" }
     },
 
     -- 搜索替换,seach,replace
@@ -717,11 +719,9 @@ require("lazy").setup({
 
     -- debug, dap
     {
-        'leoluz/nvim-dap-go',
-        ft = "go",
-        keys = { "\\1", "\\2", "\\3", "\\4", "\\5", "\\6", "\\7", "\\8", "\\9", "\\0", "\\t" },
+        'mfussenegger/nvim-dap',
         dependencies = {
-            'mfussenegger/nvim-dap',
+            'leoluz/nvim-dap-go',
             {
                 'rcarriga/nvim-dap-ui',
                 config = function()
@@ -752,9 +752,45 @@ require("lazy").setup({
                 end
             },
             'theHamsta/nvim-dap-virtual-text',
-
         },
+        ft = "go",
+        -- keys = { "\\1", "\\2", "\\3", "\\4", "\\5", "\\6", "\\7", "\\8", "\\9", "\\0", "\\t" },
         config = function()
+            local dap = require("dap")
+            dap.adapters.delve = {
+                type = 'server',
+                port = '${port}',
+                executable = {
+                    command = 'dlv',
+                    args = { 'dap', '-l', '127.0.0.1:${port}' },
+                }
+            }
+
+            -- https://github.com/go-delve/delve/blob/master/Documentation/usage/dlv_dap.md
+            dap.configurations.go = {
+                {
+                    type = "delve",
+                    name = "Debug",
+                    request = "launch",
+                    program = "${file}"
+                },
+                {
+                    type = "delve",
+                    name = "Debug test", -- configuration for debugging test files
+                    request = "launch",
+                    mode = "test",
+                    program = "${file}"
+                },
+                -- works with go.mod packages and sub packages
+                {
+                    type = "delve",
+                    name = "Debug test (go.mod)",
+                    request = "launch",
+                    mode = "test",
+                    program = "./${relativeFileDirname}"
+                }
+            }
+
             vim.cmd([[
                 nnoremap <silent> \1 :lua require'dap'.toggle_breakpoint()<CR>
                 nnoremap <silent> \2 :lua require'dap'.continue()<CR>
@@ -779,6 +815,8 @@ require("lazy").setup({
     -- 主题颜色,colorschema
     {
         "EdenEast/nightfox.nvim",
+        lazy = false,
+        priority = 1000,
         config = function()
             -- Default options
             require('nightfox').setup({
