@@ -328,7 +328,6 @@ require("lazy").setup({
     -- 注释, comment
     {
         'terrortylor/nvim-comment',
-        keys = { "gcc" },
         config = function()
             require('nvim_comment').setup({ comment_empty = false })
         end
@@ -386,7 +385,7 @@ require("lazy").setup({
     -- http
     {
         'NTBBloodbath/rest.nvim',
-        ft="http",
+        ft = "http",
         config = function()
             require("rest-nvim").setup({
                 -- Open request results in a horizontal split
@@ -421,9 +420,18 @@ require("lazy").setup({
         'windwp/nvim-spectre',
         keys = { "<leader>sw" },
         config = function()
-            vim.cmd([[
-                nnoremap <leader>sw <cmd>lua require('spectre').open_visual({select_word=true})<CR>
-            ]])
+            vim.keymap.set('n', '<leader>S', '<cmd>lua require("spectre").open()<CR>', {
+                desc = "Open Spectre"
+            })
+            vim.keymap.set('n', '<leader>sw', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
+                desc = "Search current word"
+            })
+            vim.keymap.set('v', '<leader>sw', '<esc><cmd>lua require("spectre").open_visual()<CR>', {
+                desc = "Search current word"
+            })
+            vim.keymap.set('n', '<leader>sp', '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
+                desc = "Search on current file"
+            })
         end
     },
 
@@ -703,7 +711,6 @@ require("lazy").setup({
     {
         'buoto/gotests-vim',
         ft = "go",
-        keys = { "gT" },
         dependencies = {
             {
                 'vim-test/vim-test',
@@ -869,29 +876,33 @@ require("lazy").setup({
         end
     },
 
+    -- ai代码补全,copilot
+    -- {
+    --     'github/copilot.vim',
+    --     config = function()
+    --         vim.cmd([[
+    --             imap <silent><script><expr> <A-k> copilot#Accept("\<CR>")
+    --             let g:copilot_no_tab_map = v:true
+    --             let g:copilot_proxy = 'http://127.0.0.1:7890'
+    --         ]])
+    --     end
+    -- },
+
     -- codeium
     {
         "jcdickinson/http.nvim",
         build = "cargo build --workspace --release"
     },
-    -- ai代码补全,copilot
-    {
-        'github/copilot.vim',
-        config = function()
-            vim.cmd([[
-                imap <silent><script><expr> <A-k> copilot#Accept("\<CR>")
-                let g:copilot_no_tab_map = v:true
-                let g:copilot_proxy = 'http://127.0.0.1:7890'
-            ]])
-        end
-    },
-
     {
         "jcdickinson/codeium.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim",
             "hrsh7th/nvim-cmp",
         },
+        config = function()
+            require("codeium").setup({
+            })
+        end
     },
 
     -- 代码仓库管理,git
