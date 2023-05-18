@@ -676,7 +676,7 @@ require("lazy").setup({
     {
         'JuanZoran/Trans.nvim',
         dependencies = 'kkharji/sqlite.lua',
-        keys = { "\\tr" },
+        -- keys = { "\\tr" },
         config = require("translate_config").fn
     },
 
