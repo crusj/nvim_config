@@ -1081,5 +1081,6 @@ require('my_setup')
 
 
 vim.cmd([[
-  set guifont=SimSun:h9:cANSI:CHINESE_CHARSET
+  set guifont=Operator\ Mono\ Light:h12:cANSI:CHINESE_CHARSET
+  set cmdheight=0
 ]])
