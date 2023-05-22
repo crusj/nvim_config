@@ -12,6 +12,7 @@ local function map()
         { "nmap",     "<silent> gt",               "<cmd>GoTests<cr>" },
         { "nmap",     "<silent> <space>fd",        "<cmd>lua vim.lsp.buf.hover()<CR>" },
         { "nmap",     "<silent> gfd",              "<cmd>lua vim.lsp.buf.hover()<CR>" },
+        { "nmap",     "<silent> <2-LeftMouse>",    "<cmd>lua vim.lsp.buf.hover()<CR>" },
         { "nmap",     "<silent> <space>fs",        "<cmd>lua vim.lsp.buf.signature_help()<CR>" },
         { "nmap",     "<silent> gr",               "<cmd>lua vim.lsp.buf.rename()<cr>" },
         { "nmap",     "<silent> <leader>do",       "<cmd>DiffviewOpen<cr>" },
@@ -31,11 +32,6 @@ local function map()
         { "onoremap", "m i[" },
         { "onoremap", "np",                        ":<c-u>normal! f(vi(<cr>" },
 
-        -- chatgpt
-        { "vnoremap", "<silent> <leader>op",       "<cmd>'<,'>ChatGPTRun optimize_code <cr>" },
-        { "nmap",     "<silent> <leader>ch",       "<cmd>ChatGPT<cr>" },
-        { "vnoremap",     "<silent> J",                         ":m '>+1<CR>gv-gv" },
-        { "vnoremap",     "<silent> K",                         ":m '<-2<CR>gv-gv" },
     }
 
     for _, item in ipairs(maps) do

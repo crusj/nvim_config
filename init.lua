@@ -68,13 +68,13 @@ require("lazy").setup({
     -- file explore
     {
         'kyazdani42/nvim-tree.lua',
-        tag = 'nightly' -- optional, updated every week. (see issue #1193)
+        version = 'nightly' -- optional, updated every week. (see issue #1193)
     },
 
     -- 文件面包屑,A snazzy bufferline for Neovim
     {
         'akinsho/bufferline.nvim',
-        tag = "v3.*",
+        version = "v3.*",
         dependencies = 'kyazdani42/nvim-web-devicons',
         config = function()
             require('bufferline').setup {}
@@ -240,7 +240,7 @@ require("lazy").setup({
     {
         'nvim-treesitter/nvim-treesitter',
         lazy = false,
-        tag = "v0.8.*",
+        version = "*",
         config = function()
             require 'nvim-treesitter.configs'.setup {
                 curl = { "--proxy", "http://127.0.0.1:7890" },
@@ -292,33 +292,6 @@ require("lazy").setup({
     },
     'nvim-telescope/telescope-frecency.nvim',
 
-    -- Ai代码补全
-    {
-        "jackMort/ChatGPT.nvim",
-        cmd = "ChatGPT",
-        dependencies = {
-            "MunifTanjim/nui.nvim",
-        },
-        config = function()
-            require("chatgpt").setup({
-                keymaps = {
-                    close = { "<C-c>" },
-                    submit = "<Enter>",
-                    yank_last = "<C-y>",
-                    yank_last_code = "<C-k>",
-                    scroll_up = "<C-u>",
-                    scroll_down = "<C-d>",
-                    toggle_settings = "<C-o>",
-                    new_session = "<C-n>",
-                    cycle_windows = "<Tab>",
-                    -- in the Sessions pane
-                    select_session = "<Space>",
-                    rename_session = "r",
-                    delete_session = "d",
-                },
-            })
-        end
-    },
     -- tools
     'windwp/nvim-autopairs',
     'xiyaowong/nvim-cursorword',
@@ -917,7 +890,7 @@ require("lazy").setup({
 
     {
         'akinsho/git-conflict.nvim',
-        tag = "*",
+        version = "*",
         enabled = function()
             -- 是否存在.git目录
             return require("helper").DirectoryExists(".git")
@@ -937,7 +910,7 @@ require("lazy").setup({
     -- indent
     {
         "lukas-reineke/indent-blankline.nvim",
-        tag = "v2.20.4",
+        version = "v2.20.4",
         ft = { "lua", "go", "php" },
         config = function()
             vim.cmd([[
@@ -1056,7 +1029,6 @@ require("lazy").setup({
             ]])
         end,
     },
-
     -- wiki
     {
         "vimwiki/vimwiki",
@@ -1082,5 +1054,5 @@ require('my_setup')
 
 vim.cmd([[
   set guifont=Operator\ Mono\ Light:h12:cANSI:CHINESE_CHARSET
-  set cmdheight=0
+  set cmdheight=1
 ]])
