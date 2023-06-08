@@ -1,4 +1,5 @@
-local my     = {
+local ts_utils = require 'nvim-treesitter.ts_utils';
+local my       = {
     git_log_buf = nil,
     git_log_win = nil,
     op_buf = nil,
@@ -16,7 +17,7 @@ local my     = {
     currency_percent = "",
     getting_stock_price = false
 }
-local notify = require("notify")
+local notify   = require("notify")
 
 vim.cmd([[
 highlight NotifyWARNIcon guifg=Green
@@ -330,25 +331,25 @@ function my.stock()
     if my.getting_stock_price == false then
         my.getting_stock_price = true
         vim.fn.jobstart(
-        "curl -s -H 'Referer: http://finance.sina.com.cn' 'http://hq.sinajs.cn/list=s_sh000001,s_sh511990'", {
-            on_stdout = function(_, data, _)
-                if data[1] ~= nil and data[1] ~= "" then
-                    local cuts = vim.split(data[1], ",")
-                    my.stock_price = string.format("%.2f", cuts[2])
-                    my.stock_percent = string.format("%.2f", cuts[4])
-                    my.stock_value = string.format("%.2f", cuts[3])
+            "curl -s -H 'Referer: http://finance.sina.com.cn' 'http://hq.sinajs.cn/list=s_sh000001,s_sh511990'", {
+                on_stdout = function(_, data, _)
+                    if data[1] ~= nil and data[1] ~= "" then
+                        local cuts = vim.split(data[1], ",")
+                        my.stock_price = string.format("%.2f", cuts[2])
+                        my.stock_percent = string.format("%.2f", cuts[4])
+                        my.stock_value = string.format("%.2f", cuts[3])
+                    end
+                    if data[2] ~= nil and data[2] ~= "" then
+                        local cuts = vim.split(data[2], ",")
+                        my.currency_price = string.format("%.3f", cuts[2])
+                        my.currency_percent = string.format("%.3f", cuts[4])
+                        my.currency_value = string.format("%.3f", cuts[3])
+                    end
+                end,
+                on_exit = function()
+                    my.getting_stock_price = false
                 end
-                if data[2] ~= nil and data[2] ~= "" then
-                    local cuts = vim.split(data[2], ",")
-                    my.currency_price = string.format("%.3f", cuts[2])
-                    my.currency_percent = string.format("%.3f", cuts[4])
-                    my.currency_value = string.format("%.3f", cuts[3])
-                end
-            end,
-            on_exit = function()
-                my.getting_stock_price = false
-            end
-        })
+            })
     end
 end
 
@@ -361,11 +362,49 @@ function my.get_stock_price()
     -- end
     my.stock()
     if my.stock_price ~= "" then
-        return my.stock_price .. "|" .. my.stock_value .. "|" .. my.stock_percent .. "%%" .. "🍃" .. my.currency_price.."|"..my.currency_value.."|"..my.currency_percent.."%%"
+        return my.stock_price ..
+            "|" ..
+            my.stock_value ..
+            "|" ..
+            my.stock_percent .. "%%" .. "🍃" .. my.currency_price .. "|" ..
+            my.currency_value .. "|" .. my.currency_percent .. "%%"
     end
 
     return ""
 end
 
-return my
+-- 给golangstruct增加tags
+function my.add_go_struct_tags(omitempty)
+    local start_row = vim.fn.line(".")
+    local col = vim.fn.col(".")
+    -- 检查当前行是否包含 `{` 字符
+    local current_line = vim.api.nvim_get_current_line()
+    local end_row
+    if string.find(current_line, "{") == nil then
+        end_row = start_row
+    else
+        vim.api.nvim_exec("normal! f{", true)
+        vim.api.nvim_exec("normal! %", true)
+        end_row = vim.fn.line(".")
+    end
 
+    local file_name = vim.fn.expand('%:p');
+
+    local cmd = string.format("gomodifytags -quiet -add-tags json -file %s -line %d,%d -w", file_name, start_row, end_row)
+    if omitempty == true then
+        cmd = cmd .. " -add-options json=omitempty"
+    end
+    vim.fn.jobstart(cmd, {
+        on_stderr = function(_, data)
+        end,
+        on_stdout = function()
+
+        end,
+        on_exit = function()
+            vim.api.nvim_command("edit!")
+            vim.api.nvim_win_set_cursor(0, { start_row, col - 1 })
+        end
+    })
+end
+
+return my

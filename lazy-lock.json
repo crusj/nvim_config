@@ -58,6 +58,7 @@
   "nvim-window-picker": { "branch": "main", "commit": "65bbc52c27b0cd4b29976fe03be73cc943357528" },
   "plenary.nvim": { "branch": "master", "commit": "9ac3e9541bbabd9d73663d757e4fe48a675bb054" },
   "popup.nvim": { "branch": "master", "commit": "b7404d35d5d3548a82149238289fa71f7f6de4ac" },
+  "profile.nvim": { "branch": "master", "commit": "d0d74adabb90830bd96e5cdfc8064829ed88b1bb" },
   "rest.nvim": { "branch": "main", "commit": "d8dc204e9f6fd930d9d1d709f0d19138f804431a" },
   "splitjoin.vim": { "branch": "main", "commit": "c00fa513974811e7bdf34b3d8a53abbd69c9042c" },
   "sqlite.lua": { "branch": "master", "commit": "b7e28c8463254c46a8e61c52d27d6a2040492fc3" },

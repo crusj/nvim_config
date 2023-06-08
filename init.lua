@@ -119,10 +119,10 @@ require("lazy").setup({
     },
 
     -- A blazing fast and easy to configure Neovim statusline written in Lua.
-    {
-        'nvim-lualine/lualine.nvim',
-        config = require("status_config").fn
-    },
+    -- {
+    --     'nvim-lualine/lualine.nvim',
+    --     config = require("status_config").fn
+    -- },
 
     -- Standalone UI for nvim-lsp progress. Eye candy for the impatient.
     {
@@ -1044,7 +1044,38 @@ require("lazy").setup({
                 syntax on
             ]])
         end
-    }
+    },
+    {
+        "stevearc/profile.nvim",
+        config = function()
+            local should_profile = os.getenv("NVIM_PROFILE")
+            if should_profile then
+                require("profile").instrument_autocmds()
+                if should_profile:lower():match("^start") then
+                    require("profile").start("*")
+                else
+                    require("profile").instrument("*")
+                end
+            end
+
+            local function toggle_profile()
+                local prof = require("profile")
+                if prof.is_recording() then
+                    prof.stop()
+                    vim.ui.input({ prompt = "Save profile to:", completion = "file", default = "profile.json" },
+                        function(filename)
+                            if filename then
+                                prof.export(filename)
+                                vim.notify(string.format("Wrote %s", filename))
+                            end
+                        end)
+                else
+                    prof.start("*")
+                end
+            end
+            vim.keymap.set("n", "\\pp", toggle_profile)
+        end
+    },
 })
 
 

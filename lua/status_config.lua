@@ -3,7 +3,7 @@ local M = {}
 function M.fn()
     local lualine = require("lualine")
     local helper = require("helper")
-    local gps = require("nvim-gps")
+    -- local gps = require("nvim-gps")
 
     lualine.setup({
         options = {
@@ -22,10 +22,7 @@ function M.fn()
             },
             lualine_c = {
                 {
-                    helper.get_root_path,
-                    -- color = { fg = '#287BC9' },
-                    color = { fg = 'white', gui = 'bold' },
-                    icon = { '😄' }
+                    helper.get_root_path, -- color = { fg = '#287BC9' }, color = { fg = 'white', gui = 'bold' }, icon = { '😄' }
                 },
                 -- {
                 --     'filename',
@@ -35,21 +32,21 @@ function M.fn()
                 --     color = { fg = '#FEDE5B'},
                 -- },
                 {
-                    icon = { "🤠" },
-                    gps.get_location,
-                    cond = gps.is_available,
-                    --color = { fg = '#ffaa88', gui = 'italic,bold' }
-                    color = { fg = 'white' }
+                    -- icon = { "🤠" },
+                    -- gps.get_location,
+                    -- cond = gps.is_available,
+                    -- --color = { fg = '#ffaa88', gui = 'italic,bold' }
+                    -- color = { fg = 'white' }
                 },
             },
             lualine_z = {
                 {
                     'location'
                 },
-                {
-                    icon = { "〽️" },
-                    require("my").get_stock_price
-                },
+                -- {
+                --     icon = { "〽️" },
+                --     require("my").get_stock_price
+                -- },
                 -- {
                 --     icon = { "⏰" },
                 --     helper.get_time_str,
