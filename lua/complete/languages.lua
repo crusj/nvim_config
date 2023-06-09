@@ -15,7 +15,7 @@ local function custom_attach(client, bufnr)
         floating_window_off_y          = 1,
         max_width                      = 200,
     }, bufnr)
-    vim.keymap.set('n', '<leader>fa', vim.lsp.buf.code_action, {buffer = bufnr})
+    vim.keymap.set('n', '<leader>fa', vim.lsp.buf.code_action, { buffer = bufnr })
 end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -32,14 +32,16 @@ lspconfig.gopls.setup {
 }
 
 -- rust
-require'lspconfig'.rust_analyzer.setup{
-  settings = {
-    ['rust-analyzer'] = {
-      diagnostics = {
-        enable = true;
-      }
+require 'lspconfig'.rust_analyzer.setup {
+    capabilities = capabilities,
+    on_attach = custom_attach,
+    settings = {
+        ['rust-analyzer'] = {
+            checkOnSave = {
+                command = "clippy"
+            }
+        }
     }
-  }
 }
 
 -- lua
